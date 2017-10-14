@@ -104,12 +104,15 @@ public class PlayerController : MonoBehaviour
 	private bool towerClicked = false;
 	private void TowerPlacing()
 	{
-		if (Input.GetAxis("PlaceTower") > 0 && !towerClicked)
+		Debug.Log(Input.GetAxis("PlaceTower"));
+
+		if (Input.GetAxis("PlaceTower") != 0 && !towerClicked)
 		{
+			print("Placed tower!");
 			towerClicked = true;
 			GetComponent<PlayerTowerInteractions>().PlaceTower(transform.localScale.x < 0);
 		}
-		else
+		else if (Input.GetAxis("PlaceTower") == 0)
 		{
 			towerClicked = false;
 		}

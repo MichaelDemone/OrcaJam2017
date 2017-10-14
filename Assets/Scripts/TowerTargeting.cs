@@ -21,7 +21,6 @@ public class TowerTargeting : MonoBehaviour {
 	{
 		if (targets.Count > 0)
 		{
-			targets[0].GetComponent<TestSideScrollingEnemy>().Highlight();
 			return targets[0];
 		}
 		return null;
@@ -29,7 +28,7 @@ public class TowerTargeting : MonoBehaviour {
 	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.GetComponent<TestSideScrollingEnemy>() != null)
+		if (other.GetComponent<EnemyAI>() != null)
 		{
 			targets.Add(other.gameObject);
 		}
@@ -37,10 +36,9 @@ public class TowerTargeting : MonoBehaviour {
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.GetComponent<TestSideScrollingEnemy>() != null)
+		if (other.GetComponent<EnemyAI>() != null)
 		{
 			targets.Remove(other.gameObject);
-			other.GetComponent<TestSideScrollingEnemy>().UnHighlight();
 		}
 	}
 }

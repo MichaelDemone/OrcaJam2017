@@ -99,22 +99,32 @@ public class PlayerController : MonoBehaviour
 			scale.x = (velocity.x > 0 ? 1 : -1) * Math.Abs(scale.x);
 			transform.localScale = scale;
 		}
+
+        if(gameObject.transform.position.y < -20)
+        {
+            gameObject.transform.position = new Vector3(5, -7, 0);
+        }
+
 	}
 
 	private bool towerClicked = false;
 	private void TowerPlacing()
 	{
-		Debug.Log(Input.GetAxis("PlaceTower"));
 
 		if (Input.GetAxis("PlaceTower") != 0 && !towerClicked)
 		{
-			print("Placed tower!");
 			towerClicked = true;
 			GetComponent<PlayerTowerInteractions>().PlaceTower(transform.localScale.x < 0);
 		}
 		else if (Input.GetAxis("PlaceTower") == 0)
 		{
 			towerClicked = false;
+		}
+
+		if (Input.GetAxis("RemoveTower") != 0)
+		{
+			towerClicked = true;
+			GetComponent<PlayerTowerInteractions>().RetreiveTower(transform.localScale.x < 0);
 		}
 	}
 }

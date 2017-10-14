@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 			transform.localScale = scale;
 		}
 
-        if(gameObject.transform.position.y < -20)
+        if(gameObject.transform.position.y < -13)
         {
             gameObject.transform.position = new Vector3(5, -7, 0);
         }
@@ -139,6 +139,6 @@ public class PlayerController : MonoBehaviour
         
         Vector3 direction = MousePos - PlayerCannon.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
+        PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }

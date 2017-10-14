@@ -42,7 +42,7 @@ public class TowerShooting : MonoBehaviour
 	{
 		Vector2 velocity = GetVelocityToKill(transform.position, enemy, enemyVelocity);
 
-		//Bullet = Instantiate(Bullet);
+		Bullet = Instantiate(Bullet);
 		Bullet.transform.position = transform.position;
 		Bullet.GetComponent<Rigidbody2D>().velocity = velocity;
 	}

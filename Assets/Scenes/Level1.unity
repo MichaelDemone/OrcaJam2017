@@ -1908,7 +1908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tower: {fileID: 1084746966}
-  PlacingDistance: 1
+  TowerPlacementLocation: {fileID: 467735317}
 --- !u!1001 &2048017120
 Prefab:
   m_ObjectHideFlags: 0
@@ -1959,6 +1959,11 @@ Prefab:
     - target: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114546458146853510, guid: f283fbc72aa6e994fb2309078480c7db,
+        type: 2}
+      propertyPath: enemyDamage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}

@@ -20,8 +20,11 @@ public class TheMateys : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.CompareTag("Enemy")){
+            EnemyAI enemy;
             //print("They are attacking your mateys!");
-            collision.gameObject.GetComponent<EnemyAI>().Die();
+            enemy = collision.gameObject.GetComponent<EnemyAI>();
+            ArrMateysBeenHurtRealBad(enemy.enemyDamage);
+            enemy.Die();
         }
     }
 

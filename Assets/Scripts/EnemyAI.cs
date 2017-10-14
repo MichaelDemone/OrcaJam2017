@@ -17,6 +17,8 @@ public class EnemyAI : MonoBehaviour {
     public int enemyMaxHP = 10;
     public int enemyCurrentHP;
 
+    public int enemyDamage = 1;
+
     // Use this for initialization
     #region Starts
 
@@ -107,7 +109,7 @@ public class EnemyAI : MonoBehaviour {
             Die();
     }
 
-    void Die() {
+    public void Die() {
         print("ded");
         Destroy(this.gameObject);
     }

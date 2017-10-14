@@ -6,31 +6,28 @@ public class PlayerTowerInteractions : MonoBehaviour
 {
 
 	public GameObject Tower;
-	public float PlacingDistance;
+	public Transform TowerPlacementLocation;
 	
 	
 	public void PlaceTower(bool facingLeft)
 	{
-		Vector3 playerPosition = transform.position;
-		if (facingLeft) playerPosition.x -= PlacingDistance;
-		else playerPosition.x += PlacingDistance;
+		Vector3 playerPosition = TowerPlacementLocation.position;
+		playerPosition.z = -3;
 
-		playerPosition.z = -2;
-		
 		Instantiate(Tower, playerPosition, Quaternion.identity);
 	}
 
 	public void RetreiveTower(bool facingLeft)
 	{
-		Vector2 testTowerPos = transform.position;
-		testTowerPos.x += facingLeft ? -PlacingDistance : PlacingDistance;
+		Vector3 testTowerPos = TowerPlacementLocation.position;
+		testTowerPos.z = -3;
 		
 		Collider2D[] possibleTowers = Physics2D.OverlapPointAll(testTowerPos);
 		foreach (var possibleTower in possibleTowers)
 		{
 			if (possibleTower.CompareTag("Tower"))
 			{
-				Destroy(possibleTower);
+				Destroy(possibleTower.gameObject);
 			}
 		}
 	}

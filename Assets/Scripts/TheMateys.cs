@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TheMateys : MonoBehaviour {
 
@@ -46,6 +47,7 @@ public class TheMateys : MonoBehaviour {
 
     private void ArrTheyKilledTheMateys() {
         print("THEY KILLED ALL YOUR MATEYS");
+        SceneManager.LoadScene("Lose scene");
     }
 }
 

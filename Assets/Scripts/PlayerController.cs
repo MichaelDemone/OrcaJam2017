@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 	void Update ()
 	{
 		SetMovement();
-        AimCannon();
+        //AimCannon();
 		TowerPlacing();
 	}
 

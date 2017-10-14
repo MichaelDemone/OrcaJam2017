@@ -9,7 +9,6 @@ public class TowerShooting : MonoBehaviour
 	
 	public float ProjectileSpeed = 4f;
 	public GameObject Bullet;
-	public GameObject Enemy;
 
 	public float ShootingDelay = 2;
 

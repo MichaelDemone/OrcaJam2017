@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour {
@@ -11,7 +12,7 @@ public class EnemyAI : MonoBehaviour {
     public int jumpSpeedMod = 2;
 
     public Transform jumpPos, fallPos;
-    RaycastHit2D jumpRay, fallRay;
+    RaycastHit2D[] jumpRay, fallRay;
 
     public int enemyMaxHP = 10;
     public int enemyCurrentHP;
@@ -53,23 +54,19 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void GetRays() {
-        jumpRay = Physics2D.Raycast(jumpPos.position, Vector2.zero);
-        fallRay = Physics2D.Raycast(fallPos.position, Vector2.zero);
+        jumpRay = Physics2D.RaycastAll(jumpPos.position, Vector2.zero);
+        fallRay = Physics2D.RaycastAll(fallPos.position, Vector2.zero);
 
     }
 
     private bool CheckJump() {
-        if (jumpRay.collider != null) {
-            return !jumpRay.collider.CompareTag("Ground");
-        } else
-            return true;
+
+        return !jumpRay.Any(ray => ray.collider != null && ray.collider.CompareTag("Ground"));
+        
     }
 
     private bool CheckFall() {
-        if (fallRay.collider != null) {
-            return !fallRay.collider.CompareTag("Ground");
-        } else
-            return true;
+        return !fallRay.Any(ray => ray.collider != null && ray.collider.CompareTag("Ground"));
     }
 
     private void Jump() {

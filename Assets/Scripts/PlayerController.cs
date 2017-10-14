@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 	public Transform GroundCheck;
 	
 	private Rigidbody2D rigidbod2d;
+
+    public GameObject PlayerCannon;
 	
 	// Use this for initialization
 	void Start ()
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
 	void Update ()
 	{
 		SetMovement();
+        AimCannon();
 		TowerPlacing();
 	}
 
@@ -127,4 +130,15 @@ public class PlayerController : MonoBehaviour
 			GetComponent<PlayerTowerInteractions>().RetreiveTower(transform.localScale.x < 0);
 		}
 	}
+
+    private void AimCannon()
+    {
+        Vector3 MousePos = Input.mousePosition;
+        MousePos.z = 0;
+        MousePos = Camera.main.ScreenToWorldPoint(MousePos);
+        
+        Vector3 direction = MousePos - PlayerCannon.transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
+    }
 }

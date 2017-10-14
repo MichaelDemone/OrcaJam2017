@@ -99,6 +99,12 @@ public class PlayerController : MonoBehaviour
 			scale.x = (velocity.x > 0 ? 1 : -1) * Math.Abs(scale.x);
 			transform.localScale = scale;
 		}
+
+        if(gameObject.transform.position.y < -20)
+        {
+            gameObject.transform.position = new Vector3(5, -7, 0);
+        }
+
 	}
 
 	private bool towerClicked = false;

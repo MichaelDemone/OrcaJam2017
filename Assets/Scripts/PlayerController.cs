@@ -96,14 +96,32 @@ public class PlayerController : MonoBehaviour
 		}
 
 		rigidbod2d.velocity = velocity;
-		if (Math.Abs(velocity.x) > 0)
+
+        /*if (Math.Abs(velocity.x) > 0)
 		{
 			Vector2 scale = transform.localScale;
 			scale.x = (velocity.x > 0 ? 1 : -1) * Math.Abs(scale.x);
 			transform.localScale = scale;
-		}
+		}*/
 
-        if(gameObject.transform.position.y < -13)
+        // flip the player to face the mouse
+        Vector3 MousePos = Input.mousePosition;
+        MousePos.z = 0;
+        MousePos = Camera.main.ScreenToWorldPoint(MousePos);
+        print(MousePos.x + ", " + transform.position.x);
+        if(MousePos.x < transform.position.x)
+        {
+            Vector2 scale = transform.localScale;
+            scale.x = -1 * Math.Abs(scale.x);
+            transform.localScale = scale;
+        } else
+        {
+            Vector2 scale = transform.localScale;
+            scale.x = 1 * Math.Abs(scale.x);
+            transform.localScale = scale;
+        }
+
+        if (gameObject.transform.position.y < -13)
         {
             gameObject.transform.position = new Vector3(5, -7, 0);
         }
@@ -138,6 +156,13 @@ public class PlayerController : MonoBehaviour
         MousePos = Camera.main.ScreenToWorldPoint(MousePos);
         
         Vector3 direction = MousePos - PlayerCannon.transform.position;
+
+        if (MousePos.x < transform.position.x)
+        {
+            // since the player is flipped to face the mouse, have to account for this
+            direction = direction * -1;
+        }
+
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }

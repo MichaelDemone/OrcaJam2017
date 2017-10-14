@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour {
+public class EnemyAI : Enemy {
     public float moveVelocity = 4f;
     public int jumpVelocity = 10;
-    private Rigidbody2D body;
     private bool touchingGround = false;
     private bool aboutToFall = false;
     public int jumpSpeedMod = 2;
@@ -15,25 +14,9 @@ public class EnemyAI : MonoBehaviour {
     public Transform jumpPos, fallPos;
     RaycastHit2D[] jumpRay, fallRay;
 
-    public int enemyMaxHP = 10;
-    public int enemyCurrentHP;
+
 
     public int enemyDamage = 1;
-
-    // Use this for initialization
-    #region Starts
-
-    private void Awake() {
-
-        body = GetComponent<Rigidbody2D>();
-    }
-
-    void Start() {
-
-        enemyCurrentHP = enemyMaxHP;
-    }
-
-    #endregion
 
     // Update is called once per frame
     void Update() {
@@ -84,16 +67,6 @@ public class EnemyAI : MonoBehaviour {
         body.velocity = new Vector2(-moveVelocity/fallSpeedMod, 0);
     }
 
-   /* private void OnTriggerEnter2D(Collider2D collision) {
-
-        if (collision.gameObject.CompareTag("projectile")) {
-            Destroy(collision.gameObject);
-            print("OUCH, THAT HURT");
-            TalkShitGetHit(collision.gameObject.GetComponent<Bullet>().damage);
-            print("My hp is now " + enemyCurrentHP);
-        }
-    }*/
-
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Ground")) {
             touchingGround = true;
@@ -101,25 +74,9 @@ public class EnemyAI : MonoBehaviour {
         }
     }
 
-    public void TalkShitGetHit(int damage) {
-        print("OUCH, THAT HURT");
-        if (enemyCurrentHP > damage) {
-            enemyCurrentHP = enemyCurrentHP - damage;
-            print("My hp is now " + enemyCurrentHP);
-        } else
-            Die();
-    }
-
-    public void Die() {
-        print("ded");
-        Destroy(this.gameObject);
-    }
-
-    private bool WillJump(float rand) {
-        if (rand >= 0.5f) {
-            return true;
-        } else
-            return false;
+    private bool WillJump(float rand)
+    {
+        return rand >= 0.5f;
     }
 
     private float randomNumber() {

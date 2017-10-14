@@ -23,19 +23,24 @@ public class PlayerController : MonoBehaviour
 
 	private bool jumping = false;
 	private float timeJumping = 0;
-	private bool onGround = false;
 
 	private Vector2 velocity;
 	
 	// Update is called once per frame
-	void FixedUpdate ()
+	void Update ()
 	{
-		velocity = rigidbod2d.velocity; 
+		SetMovement();
+		TowerPlacing();
+	}
+
+	private void SetMovement()
+	{
+		velocity = rigidbod2d.velocity;
 		velocity.x = Input.GetAxis("Horizontal") * HorizontalSpeed;
 
-		
-		SetOnGround();
-		if (onGround && Input.GetAxis("Jump") > 0 && !jumping)
+		bool touchingGround = Physics2D.OverlapPointAll(GroundCheck.position).Any(col => col.CompareTag("Ground"));
+
+		if (touchingGround && Input.GetAxis("Jump") > 0 && !jumping)
 		{
 			velocity.y += Input.GetAxis("Jump") * JumpSpeed;
 			jumping = true;
@@ -63,32 +68,50 @@ public class PlayerController : MonoBehaviour
 			velocity.y = 0;
 		}
 
+		Collider2D[] overlapCols = Physics2D.OverlapPointAll(transform.position);
+		bool overlayClimable = overlapCols.Any(overlapCol => overlapCol.CompareTag("Climbable"));
 
-		if (Input.GetAxis("Vertical") > 0)
+		if (overlayClimable)
 		{
-			Collider2D[] overlapCols = Physics2D.OverlapPointAll(transform.position);
-			bool overlapClimbable = overlapCols.Any(overlapCol => overlapCol.CompareTag("Climbable"));
-
-			if(overlapClimbable) velocity.y = MaxClimbSpeed;
+			GetComponent<Rigidbody2D>().gravityScale = 0;
+			velocity.y = Input.GetAxis("Vertical") * MaxClimbSpeed;
 		}
+		else
+		{
+			GetComponent<Rigidbody2D>().gravityScale = 1;
+		}
+
 
 		if (Math.Abs(velocity.x) > HorizontalMaxSpeed)
 		{
 			velocity.x = Math.Sign(velocity.x) * HorizontalMaxSpeed;
 		}
-		
+
 		if (Math.Abs(velocity.y) > MaxVertSpeed)
 		{
 			velocity.y = Math.Sign(velocity.y) * MaxVertSpeed;
 		}
 
 		rigidbod2d.velocity = velocity;
+		if (Math.Abs(velocity.x) > 0)
+		{
+			Vector2 scale = transform.localScale;
+			scale.x = (velocity.x > 0 ? 1 : -1) * Math.Abs(scale.x);
+			transform.localScale = scale;
+		}
 	}
 
-	private Vector2 pos;
-	void SetOnGround()
+	private bool towerClicked = false;
+	private void TowerPlacing()
 	{
-		pos = GroundCheck.position;
-		onGround = Physics2D.OverlapPointAll(pos).Any(col => col.CompareTag("Ground"));
+		if (Input.GetAxis("PlaceTower") > 0 && !towerClicked)
+		{
+			towerClicked = true;
+			GetComponent<PlayerTowerInteractions>().PlaceTower(transform.localScale.x < 0);
+		}
+		else
+		{
+			towerClicked = false;
+		}
 	}
 }

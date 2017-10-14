@@ -23,7 +23,11 @@ public class Bullet : MonoBehaviour
 					test.TalkShitGetHit(damage);
 				}
 			}
-			transform.position = new Vector3(100, 100);
+			Destroy(gameObject);
+		}
+		else if (other.gameObject.layer == 8)
+		{
+			Destroy(gameObject);
 		}
 	}
 }

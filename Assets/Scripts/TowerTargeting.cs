@@ -28,7 +28,7 @@ public class TowerTargeting : MonoBehaviour {
 	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.GetComponent<EnemyAI>() != null)
+		if (other.GetComponent<Enemy>() != null)
 		{
 			targets.Add(other.gameObject);
 		}
@@ -36,7 +36,7 @@ public class TowerTargeting : MonoBehaviour {
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.GetComponent<EnemyAI>() != null)
+		if (other.GetComponent<Enemy>() != null)
 		{
 			targets.Remove(other.gameObject);
 		}

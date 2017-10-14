@@ -11,14 +11,14 @@ public class Bullet : MonoBehaviour
 	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.GetComponent<EnemyAI>() != null)
+		if (other.gameObject.GetComponent<Enemy>() != null)
 		{
 			print("Hit!");
 			Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
 			foreach (var col in cols)
 			{
-				EnemyAI test;
-				if ((test = col.GetComponent<EnemyAI>()) != null)
+				Enemy test;
+				if ((test = col.GetComponent<Enemy>()) != null)
 				{
 					test.TalkShitGetHit(damage);
 				}

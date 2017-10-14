@@ -123,7 +123,6 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetAxis("RemoveTower") != 0)
 		{
-			print("Placed tower!");
 			towerClicked = true;
 			GetComponent<PlayerTowerInteractions>().RetreiveTower(transform.localScale.x < 0);
 		}

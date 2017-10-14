@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Permissions;
-using UnityEditor;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,7 +9,9 @@ public class PlayerController : MonoBehaviour
 	public float JumpSpeed = 3;
 	public float MaxVertSpeed = 10;
 	public float TimeJumpingStaysAffecting = 1;
-	
+	public float MaxClimbSpeed = 3f;
+
+	public Transform GroundCheck;
 	
 	private Rigidbody2D rigidbod2d;
 	
@@ -66,6 +64,14 @@ public class PlayerController : MonoBehaviour
 		}
 
 
+		if (Input.GetAxis("Vertical") > 0)
+		{
+			Collider2D[] overlapCols = Physics2D.OverlapPointAll(transform.position);
+			bool overlapClimbable = overlapCols.Any(overlapCol => overlapCol.CompareTag("Climbable"));
+
+			if(overlapClimbable) velocity.y = MaxClimbSpeed;
+		}
+
 		if (Math.Abs(velocity.x) > HorizontalMaxSpeed)
 		{
 			velocity.x = Math.Sign(velocity.x) * HorizontalMaxSpeed;
@@ -82,8 +88,7 @@ public class PlayerController : MonoBehaviour
 	private Vector2 pos;
 	void SetOnGround()
 	{
-		pos = transform.position;
-		pos.y -= 1.25f;
-		onGround = Physics2D.Raycast(pos, Vector2.zero);
+		pos = GroundCheck.position;
+		onGround = Physics2D.OverlapPointAll(pos).Any(col => col.CompareTag("Ground"));
 	}
 }

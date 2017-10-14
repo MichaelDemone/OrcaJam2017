@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour {
     private bool touchingGround = false;
     private bool aboutToFall = false;
     public int jumpSpeedMod = 2;
+    public int fallSpeedMod = 2;
 
     public Transform jumpPos, fallPos;
     RaycastHit2D[] jumpRay, fallRay;
@@ -80,7 +81,7 @@ public class EnemyAI : MonoBehaviour {
     private void Fall() {
         print("I'M FREE... FREE FAAAAALING!");
         touchingGround = false;
-        body.velocity = new Vector2(-moveVelocity/jumpSpeedMod, 0);
+        body.velocity = new Vector2(-moveVelocity/fallSpeedMod, 0);
     }
 
    /* private void OnTriggerEnter2D(Collider2D collision) {

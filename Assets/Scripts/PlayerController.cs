@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 			transform.localScale = scale;
 		}
 
-        if(gameObject.transform.position.y < -20)
+        if(gameObject.transform.position.y < -13)
         {
             gameObject.transform.position = new Vector3(5, -7, 0);
         }

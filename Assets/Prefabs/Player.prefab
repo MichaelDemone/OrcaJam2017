@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6863de1d032183e4fa1aa03755bf95e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tower: {fileID: 0}
+  Tower: {fileID: 1810632188674620, guid: 5384b09f48f92ec42a1903bbb9ce8b90, type: 2}
   TowerPlacementLocation: {fileID: 4324502936591126}
 --- !u!114 &114718142082107438
 MonoBehaviour:

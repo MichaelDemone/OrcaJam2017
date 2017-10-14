@@ -7,19 +7,20 @@ public class Bullet : MonoBehaviour
 {
 
 	public float ExplosionRadius = 5;
+    public int damage = 3;
 	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.GetComponent<TestSideScrollingEnemy>() != null)
+		if (other.gameObject.GetComponent<EnemyAI>() != null)
 		{
 			print("Hit!");
 			Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
 			foreach (var col in cols)
 			{
-				TestSideScrollingEnemy test;
-				if ((test = col.GetComponent<TestSideScrollingEnemy>()) != null)
+				EnemyAI test;
+				if ((test = col.GetComponent<EnemyAI>()) != null)
 				{
-					test.Hit();
+					test.TalkShitGetHit(damage);
 				}
 			}
 			transform.position = new Vector3(100, 100);

@@ -12,6 +12,7 @@ public class FlyboiAI : MonoBehaviour {
     private Rigidbody2D body;
     public int amplitudeMod=15;
     public int wavelengthMod = 3;
+    public int enemyDamage = 1;
 
 
     void Awake() {

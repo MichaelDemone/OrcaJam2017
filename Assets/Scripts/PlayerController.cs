@@ -108,7 +108,6 @@ public class PlayerController : MonoBehaviour
         Vector3 MousePos = Input.mousePosition;
         MousePos.z = 0;
         MousePos = Camera.main.ScreenToWorldPoint(MousePos);
-        print(MousePos.x + ", " + transform.position.x);
         if(MousePos.x < transform.position.x)
         {
             Vector2 scale = transform.localScale;

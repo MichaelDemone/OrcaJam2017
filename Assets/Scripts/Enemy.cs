@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour {
 
 	public virtual void Die()
     {
+        Scoreboard.score = Scoreboard.score + 1;
         UIText.GetComponent<UpdateUI>().NumEnemies -= 1;
 		Destroy(this.gameObject);
 	}

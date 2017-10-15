@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
+	public float TimeBeforeDestroy = 3f;
 	public float ExplosionRadius = 5;
     public int damage = 3;
-	
+
+	IEnumerable Start()
+	{
+		yield return new WaitForSeconds(TimeBeforeDestroy);
+		Destroy(gameObject);
+	}
+
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.GetComponent<Enemy>() != null)

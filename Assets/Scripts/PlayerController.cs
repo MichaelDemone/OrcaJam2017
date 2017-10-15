@@ -11,12 +11,16 @@ public class PlayerController : MonoBehaviour
 	public float TimeJumpingStaysAffecting = 1;
 	public float MaxClimbSpeed = 3f;
 
+	public float BulletSpeed = 6;
+	
 	public Transform GroundCheck;
 	
 	private Rigidbody2D rigidbod2d;
 
     public GameObject PlayerCannon;
 
+	public GameObject Bullet;
+	
     public bool paused = false;
 	
 	// Use this for initialization
@@ -95,7 +99,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
-			GetComponent<Rigidbody2D>().gravityScale = 1;
+			GetComponent<Rigidbody2D>().gravityScale = 4;
 		}
 
 
@@ -144,20 +148,35 @@ public class PlayerController : MonoBehaviour
 
     private void AimCannon()
     {
-            Vector3 MousePos = Input.mousePosition;
-            MousePos.z = 0;
-            MousePos = Camera.main.ScreenToWorldPoint(MousePos);
+		Vector3 MousePos = Input.mousePosition;
+		MousePos.z = 0;
+		MousePos = Camera.main.ScreenToWorldPoint(MousePos);
 
-            Vector3 direction = MousePos - PlayerCannon.transform.position;
+		Vector3 direction = MousePos - PlayerCannon.transform.position;
 
-            if (MousePos.x < transform.position.x)
-            {
-                // since the player is flipped to face the mouse, have to account for this
-                direction = direction * -1;
-            }
+		if (MousePos.x < transform.position.x)
+		{
+			// since the player is flipped to face the mouse, have to account for this
+			direction = direction * -1;
+		}
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+		PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+	    if (Input.GetAxis("Fire1") != 0)
+	    {
+		    GameObject bullet = Instantiate(Bullet, transform.position, Quaternion.identity);
+		    
+		    Vector3 MousePos2 = Input.mousePosition;
+		    MousePos2.z = 0;
+		    MousePos2 = Camera.main.ScreenToWorldPoint(MousePos2);
+		    
+		    Vector3 direction2 = MousePos - PlayerCannon.transform.position;
+
+		    
+		    bullet.GetComponent<Rigidbody2D>().velocity = direction2.normalized * BulletSpeed;
+	    }
+	    
     }
 
     public void Pause()

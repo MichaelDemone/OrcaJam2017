@@ -6,7 +6,8 @@ public class EnemySpawner : MonoBehaviour
 {
 
 	public GameObject Enemy;
-	private IEnumerator spawnEnemyloop;
+    public GameObject BossEnemy;
+    private IEnumerator spawnEnemyloop;
 
     public float TimeBetweenSpawns = 5f;
 

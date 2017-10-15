@@ -16,11 +16,14 @@ public class CannonFireScript : MonoBehaviour {
     public AudioClip FiringSound;
     
     private Animator animator;
+
+    private ParticleSystem system;
     
     // Use this for initialization
     void Start ()
     {
-        //animator.GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        system = GetComponentInChildren<ParticleSystem>();
     }
 	
 	// Update is called once per frame
@@ -66,7 +69,11 @@ public class CannonFireScript : MonoBehaviour {
                 bullet.GetComponent<Rigidbody2D>().velocity = direction2.normalized * BulletSpeed + PlayerVelocity;
 
                 AudioPlayer.PlayFile(FiringSound, 0.2f);
-
+                
+                if(animator != null) animator.SetTrigger("Fire");
+                
+                if(system != null) system.Play();
+                
                 WeaponCooldown = FireRate;
             }
 	    }

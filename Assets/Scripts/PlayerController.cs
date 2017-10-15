@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 	public float TimeJumpingStaysAffecting = 1;
 	public float MaxClimbSpeed = 3f;
 
+	public GameObject ParticleSystem;
+	
 	private Animator animator;
 	
     //public float firerate;

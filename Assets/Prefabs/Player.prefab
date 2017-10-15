@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 212856006537820920}
   - component: {fileID: 114718142082107438}
   - component: {fileID: 50396686817158342}
-  - component: {fileID: 114448598679981860}
   - component: {fileID: 70077068077678470}
   - component: {fileID: 114547698157409430}
   m_Layer: 9
@@ -198,17 +197,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.625, y: 1.875}
   m_Direction: 0
---- !u!114 &114448598679981860
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304942780868714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 998db1e14067b06459779e80dff77aa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114547698157409430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6863de1d032183e4fa1aa03755bf95e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxNumberOfTowers: 10
+  NumberOfTowersPlaced: 0
   Tower: {fileID: 1810632188674620, guid: 5384b09f48f92ec42a1903bbb9ce8b90, type: 2}
   TowerPlacementLocation: {fileID: 4324502936591126}
 --- !u!114 &114718142082107438
@@ -238,9 +228,11 @@ MonoBehaviour:
   JumpSpeed: 20
   MaxVertSpeed: 10
   TimeJumpingStaysAffecting: 0.3
-  MaxClimbSpeed: 3
+  MaxClimbSpeed: 10
+  BulletSpeed: 80
   GroundCheck: {fileID: 4176788146013540}
   PlayerCannon: {fileID: 1339623595243738}
+  Bullet: {fileID: 1716955228109920, guid: 023b2a4e6c9a9234ba052327e01faf6d, type: 2}
   paused: 0
 --- !u!212 &212461471725304012
 SpriteRenderer:

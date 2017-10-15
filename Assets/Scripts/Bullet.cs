@@ -9,7 +9,12 @@ public class Bullet : MonoBehaviour
 	public float ExplosionRadius = 5;
     public int damage = 3;
 
-	IEnumerable Start()
+	void Start()
+	{
+		StartCoroutine(AutoDestroy());
+	}
+	
+	IEnumerator AutoDestroy()
 	{
 		yield return new WaitForSeconds(TimeBeforeDestroy);
 		Destroy(gameObject);

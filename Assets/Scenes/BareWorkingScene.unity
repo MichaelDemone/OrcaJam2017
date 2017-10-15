@@ -612,6 +612,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 500430354}
+--- !u!1001 &513850122
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.265572
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.891429
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &563584778
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +941,7 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c,
     type: 2}
-  m_PrefabInternal: {fileID: 1668415360}
+  m_PrefabInternal: {fileID: 513850122}
 --- !u!1 &1297233579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1107,7 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 1304942780868714, guid: c68b231009781184683260f3fd0ea15c,
     type: 2}
-  m_PrefabInternal: {fileID: 1668415360}
+  m_PrefabInternal: {fileID: 513850122}
 --- !u!1 &1709843731
 GameObject:
   m_ObjectHideFlags: 0

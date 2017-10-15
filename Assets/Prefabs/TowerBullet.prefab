@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114745999192591454}
   - component: {fileID: 50406795611300854}
   m_Layer: 10
-  m_Name: Bullet
+  m_Name: TowerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63f01dcd2933434e9de96578d36f41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeBeforeDestroy: 3
   ExplosionRadius: 5
   damage: 3
 --- !u!212 &212422943256908256

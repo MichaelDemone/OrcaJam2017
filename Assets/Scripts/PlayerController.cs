@@ -37,12 +37,10 @@ public class PlayerController : MonoBehaviour
         {
             if (paused)
             {
-                paused = false;
-                Time.timeScale = 1;
+                Unpause();
             } else
             {
-                paused = true;
-                Time.timeScale = 0;
+                Pause();
             }
         }
         if (!paused)
@@ -182,5 +180,17 @@ public class PlayerController : MonoBehaviour
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        }
+    }
+
+    public void Pause()
+    {
+        paused = true;
+        Time.timeScale = 0;
+    }
+
+    public void Unpause()
+    {
+        paused = false;
+        Time.timeScale = 1;
+    }
 }

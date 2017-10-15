@@ -34,4 +34,5 @@ sysinfo.txt
 *.unitypackage
 
 .idea/
+
 ProjectSettings/ProjectVersion.txt

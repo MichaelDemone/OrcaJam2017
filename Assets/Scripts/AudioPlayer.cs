@@ -12,7 +12,6 @@ public class AudioPlayer : MonoBehaviour
 	public static void PlayFile(AudioClip clip)
 	{
 		audioSource.PlayOneShot(clip);
-
 	}
 	
 	// Use this for initialization

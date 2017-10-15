@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
 			print("hit enemy with splash");
 		}
             
-		AudioPlayer.PlayFile(ExplodeClip);
+		AudioPlayer.PlayFile(ExplodeClip, 0.2f);
 		Destroy(gameObject);
 	}
 }

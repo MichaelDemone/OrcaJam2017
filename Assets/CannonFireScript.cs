@@ -13,6 +13,8 @@ public class CannonFireScript : MonoBehaviour {
 
     public bool flip = false;   // modified by PlayerController.cs
 
+    public AudioClip FiringSound;
+    
     // Use this for initialization
     void Start () {
 		
@@ -60,7 +62,7 @@ public class CannonFireScript : MonoBehaviour {
 
                 bullet.GetComponent<Rigidbody2D>().velocity = direction2.normalized * BulletSpeed + PlayerVelocity;
 
-                GetComponent<AudioSource>().Play();
+                AudioPlayer.PlayFile(FiringSound);
 
                 WeaponCooldown = FireRate;
             }

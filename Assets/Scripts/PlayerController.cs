@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject PlayerCannon;
 
-    bool paused = false;
+    public bool paused = false;
 	
 	// Use this for initialization
 	void Start ()

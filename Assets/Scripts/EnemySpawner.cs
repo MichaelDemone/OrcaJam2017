@@ -8,7 +8,10 @@ public class EnemySpawner : MonoBehaviour
 	public GameObject Enemy;
 	private IEnumerator spawnEnemyloop;
 
-	public float TimeBetweenSpawns = 3f;
+	public float TimeBetweenSpawns = 5f;
+
+    public bool RapidSpawnWave = false;
+    float SpawnWaveTimer;
 	
 	public void StopSpawningEnemies()
 	{
@@ -26,14 +29,38 @@ public class EnemySpawner : MonoBehaviour
 		StartSpawningEnemies();
 	}
 
+    private void Update()
+    {
+        if(RapidSpawnWave)
+        {
+            SpawnWaveTimer -= Time.deltaTime;
+            if(SpawnWaveTimer < 0)
+            {
+                RapidSpawnWave = false;
+            }
+        }
+    }
+
 	IEnumerator SpawnEnemyLoop()
 	{
-		while (true)
-		{
-			SpawnEnemy();
-			yield return new WaitForSeconds(TimeBetweenSpawns);
+        while (true)
+        {
+            SpawnEnemy();
+            if (RapidSpawnWave) {
+                yield return new WaitForSeconds(TimeBetweenSpawns * 0.15f);
+            } else {
+                yield return new WaitForSeconds(TimeBetweenSpawns);
+            }
 		}
 	}
+
+    public void StartSpawnWave(float t)
+    {
+        StopSpawningEnemies();
+        RapidSpawnWave = true;
+        SpawnWaveTimer = t;
+        StartSpawningEnemies();
+    }
 
 	
 	public void SpawnEnemy()

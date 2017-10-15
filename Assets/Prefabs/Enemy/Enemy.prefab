@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d54cddadf460248be1a125a9023f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHP: 30
+  enemyMaxHP: 12
   enemyCurrentHP: 0
   UIText: {fileID: 0}
   GroundCheckLeft: {fileID: 4806148513404452}

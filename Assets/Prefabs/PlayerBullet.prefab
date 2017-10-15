@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBeforeDestroy: 3
   ExplosionRadius: 0
-  RegularDamage: 1
+  RegularDamage: 4
   SplashDamage: 0
   ExplodeClip: {fileID: 0}
 --- !u!212 &212422943256908256

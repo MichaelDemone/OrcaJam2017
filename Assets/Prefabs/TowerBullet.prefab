@@ -101,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBeforeDestroy: 3
   ExplosionRadius: 5
-  RegularDamage: 40
-  SplashDamage: 25
+  RegularDamage: 12
+  SplashDamage: 6
   ExplodeClip: {fileID: 8300000, guid: a08c9fd86a9adae488e6459c8df6e5ed, type: 3}
 --- !u!212 &212422943256908256
 SpriteRenderer:

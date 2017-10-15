@@ -10,6 +10,8 @@ public class TowerShooting : MonoBehaviour
 	public float ProjectileSpeed = 4f;
 	public GameObject Bullet;
 
+    public AudioSource shoot, hit;
+
 	public float ShootingDelay = 2;
 
 	public float EnemyPositionInSecond = 0.2f;
@@ -42,6 +44,8 @@ public class TowerShooting : MonoBehaviour
 		Vector2 velocity = GetVelocityToKill(transform.position, enemy, enemyVelocity);
 
 		GameObject bullet = Instantiate(Bullet);
+        shoot.Play();
+       // bullet.GetComponent<AudioSource>().Play();
 		bullet.transform.position = transform.position;
 		bullet.GetComponent<Rigidbody2D>().velocity = velocity;
 	}

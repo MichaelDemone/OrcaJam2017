@@ -10,6 +10,9 @@ public class SpawnerWaveScript : MonoBehaviour {
     public float WaveDuration;
     float WaveTimer;
 
+    public float SpawnRateIncreaseFrequency;
+    float RateIncreaseTimer;
+
     public GameObject[] Spawners;
 
     public GameObject WarningText;
@@ -19,7 +22,9 @@ public class SpawnerWaveScript : MonoBehaviour {
     void Start () {
         NextWave = Random.Range(0, 3);
         WaveTimer = WaveFrequency;
-	}
+        RateIncreaseTimer = SpawnRateIncreaseFrequency;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -46,5 +51,17 @@ public class SpawnerWaveScript : MonoBehaviour {
             WarningSent = false;
             WarningText.GetComponent<Text>().text = "";
         }
-	}
+
+        RateIncreaseTimer -= Time.deltaTime;
+
+        if(RateIncreaseTimer < 0)
+        {
+            RateIncreaseTimer = SpawnRateIncreaseFrequency;
+            for(int i = 0; i < Spawners.Length; i++)
+            {
+                Spawners[i].GetComponent<EnemySpawner>().IncreaseSpawnRate();
+            }
+        }
+
+    }
 }

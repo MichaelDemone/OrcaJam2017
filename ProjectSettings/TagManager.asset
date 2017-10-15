@@ -45,6 +45,18 @@ TagManager:
   - name: Background
     uniqueID: 806466405
     locked: 0
+  - name: Waves
+    uniqueID: 1346663361
+    locked: 0
+  - name: Ship
+    uniqueID: 1683038019
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ropes
+    uniqueID: 2430378789
+    locked: 0
+  - name: PlayerOverRopes
+    uniqueID: 29440905
     locked: 0

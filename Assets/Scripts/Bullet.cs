@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
 	public float TimeBeforeDestroy = 3f;
 	public float ExplosionRadius = 5;
     public int damage;
+    public bool destroyed = false;
+
 
 	void Start()
 	{
@@ -31,6 +33,7 @@ public class Bullet : MonoBehaviour
 		}
 		else if (other.gameObject.layer == 8)
 		{
+            destroyed = true;
 			Destroy(gameObject);
 		}
 	}

@@ -8,7 +8,13 @@ public class EnemySpawner : MonoBehaviour
 	public GameObject Enemy;
 	private IEnumerator spawnEnemyloop;
 
-	public float TimeBetweenSpawns = 5f;
+    public float TimeBetweenSpawns = 5f;
+
+    public float SpawnRateMultiplier = 1.0f;
+
+    bool ReadyPeriod = true;
+    public float ReadyPeriodTime = 1.0f;
+    // note: in the game, ready periods are set so that spawns are staggered
 
     public bool RapidSpawnWave = false;
     float SpawnWaveTimer;
@@ -45,11 +51,19 @@ public class EnemySpawner : MonoBehaviour
 	{
         while (true)
         {
-            SpawnEnemy();
-            if (RapidSpawnWave) {
-                yield return new WaitForSeconds(TimeBetweenSpawns * 0.15f);
+            if (ReadyPeriod)
+            {
+                yield return new WaitForSeconds(ReadyPeriodTime);
+                ReadyPeriod = false;
             } else {
-                yield return new WaitForSeconds(TimeBetweenSpawns);
+                SpawnEnemy();
+                if (RapidSpawnWave)
+                {
+                    yield return new WaitForSeconds(TimeBetweenSpawns * 0.15f / SpawnRateMultiplier);
+                }
+                else {
+                    yield return new WaitForSeconds(TimeBetweenSpawns / SpawnRateMultiplier);
+                }
             }
 		}
 	}
@@ -67,4 +81,13 @@ public class EnemySpawner : MonoBehaviour
 	{
 		Instantiate(Enemy, transform.position, Quaternion.identity);
 	}
+
+    public void IncreaseSpawnRate()
+    {
+        SpawnRateMultiplier += 0.25f;
+        if(SpawnRateMultiplier > 5.0f)
+        {
+            SpawnRateMultiplier = 5.0f;
+        }
+    }
 }

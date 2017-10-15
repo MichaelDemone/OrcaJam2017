@@ -16,6 +16,8 @@ public class TowerShooting : MonoBehaviour
 	public float EnemyPositionInSecond = 0.2f;
 
 	public AudioClip ShootClip;
+
+	public ParticleSystem particles;
 	
 	// Use this for initialization
 	void Start ()
@@ -51,6 +53,8 @@ public class TowerShooting : MonoBehaviour
         float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
         cannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		bullet.GetComponent<Rigidbody2D>().velocity = velocity;
+		
+		particles.Play();
 	}
 
 	private Vector2 GetVelocityToKill(Vector2 start, Vector2 enemy, Vector2 enemyVelocity)

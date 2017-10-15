@@ -16,8 +16,8 @@ public class EnemyAI : Enemy
     public int jumpSpeedMod = 2;
     public int fallSpeedMod = 2;
 
-    public Transform jumpPos, fallPos, hillPos, slopePos;
-    RaycastHit2D[] jumpRay, fallRay, hillRay, slopeRay;
+    public Transform jumpPos, fallPos1, fallPos2, hillPos, slopePos;
+    RaycastHit2D[] jumpRay, fallRay1, fallRay2, hillRay, slopeRay;
 
 
 
@@ -61,7 +61,8 @@ public class EnemyAI : Enemy
 
     private void GetRays() {
         jumpRay = Physics2D.RaycastAll(jumpPos.position, Vector2.zero);
-        fallRay = Physics2D.RaycastAll(fallPos.position, Vector2.zero);
+        fallRay1 = Physics2D.RaycastAll(fallPos1.position, Vector2.zero);
+        fallRay2 = Physics2D.RaycastAll(fallPos2.position, Vector2.zero);
         hillRay = Physics2D.RaycastAll(hillPos.position, Vector2.zero);
         slopeRay = Physics2D.RaycastAll(slopePos.position, Vector2.zero);
 
@@ -74,7 +75,13 @@ public class EnemyAI : Enemy
     }
 
     private bool CheckFall() {
-        return !fallRay.Any(ray => ray.collider != null && ray.collider.CompareTag("Ground"));
+        //return !fallRay.Any(ray => ray.collider != null && ray.collider.CompareTag("Ground"));
+        if(fallRay1.Any(ray => ray.collider != null && ray.collider.CompareTag("Ground"))
+            || fallRay2.Any(ray => ray.collider != null && ray.collider.CompareTag("Ground")))
+        {
+            return false;
+        }
+        return true;
     }
 
     private bool CheckHill() {

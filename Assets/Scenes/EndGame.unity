@@ -6116,6 +6116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1802977212}
   - component: {fileID: 1802977213}
+  - component: {fileID: 1802977214}
   m_Layer: 0
   m_Name: BGSketch
   m_TagString: Untagged
@@ -6182,6 +6183,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1802977214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1802977211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9eecf20f4697e4a9783b50a993fcb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeOffset: 0
+  XMagnitude: 0.1
+  YMagnitude: 0.1
 --- !u!1 &1826844304
 GameObject:
   m_ObjectHideFlags: 0

@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 345187731}
   - component: {fileID: 345187733}
   - component: {fileID: 345187732}
+  - component: {fileID: 345187734}
   m_Layer: 5
   m_Name: PauseText
   m_TagString: Untagged
@@ -312,7 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.13103461, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -321,12 +322,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 75
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_MinSize: 7
+    m_MaxSize: 75
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -339,6 +340,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 345187730}
+--- !u!114 &345187734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 345187730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0c63cad770d0d478517b23fe48546f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1668415361}
 --- !u!4 &1078061394 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4649813564186716, guid: c68b231009781184683260f3fd0ea15c,
@@ -499,6 +512,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c68b231009781184683260f3fd0ea15c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1668415361 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1304942780868714, guid: c68b231009781184683260f3fd0ea15c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1668415360}
 --- !u!1 &1709843731
 GameObject:
   m_ObjectHideFlags: 0

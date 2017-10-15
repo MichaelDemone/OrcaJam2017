@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 	public float TimeJumpingStaysAffecting = 1;
 	public float MaxClimbSpeed = 3f;
 
+	private Animator animator;
+	
     //public float firerate;
     //float firedelay = 0;
 
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
 	void Start ()
 	{
 		rigidbod2d = GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator>();
 	}
 
 	private bool jumping = false;
@@ -57,6 +60,8 @@ public class PlayerController : MonoBehaviour
         }
 	}
 
+	private bool climbing = false;
+	
 	private void SetMovement()
 	{
 		velocity = rigidbod2d.velocity;
@@ -69,7 +74,6 @@ public class PlayerController : MonoBehaviour
 			velocity.y += Input.GetAxis("Jump") * JumpSpeed;
 			jumping = true;
 			timeJumping = 0;
-			GetComponent<Animator>().SetTrigger("Jumping");
 		}
 		else if (jumping)
 		{
@@ -83,10 +87,6 @@ public class PlayerController : MonoBehaviour
 				}
 				velocity.y += JumpSpeed * (TimeJumpingStaysAffecting - timeJumping) / TimeJumpingStaysAffecting;
 			}
-			else
-			{
-				jumping = false;
-			}
 		}
 		else if (velocity.y > 0 && Input.GetAxis("Jump") < 0.1f)
 		{
@@ -97,17 +97,23 @@ public class PlayerController : MonoBehaviour
 		bool overlayClimable = overlapCols.Any(overlapCol => overlapCol.CompareTag("Climbable"));
 
 		GetComponent<Collider2D>().enabled = true;
-
 		
-		if (overlayClimable)
+		
+		if (overlayClimable && Input.GetAxis("Vertical") != 0)
 		{
 			GetComponent<Rigidbody2D>().gravityScale = 0;
+			climbing = true;
+			GetComponent<SpriteRenderer>().sortingLayerName = "PlayerOverRopes";
+			PlayerCannon.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerOverRopes";
 			velocity.y = Input.GetAxis("Vertical") * MaxClimbSpeed;
 			GetComponent<Collider2D>().enabled = false;
 		}
-		else
+		else if (!overlayClimable)
 		{
+			climbing = false;
 			GetComponent<Rigidbody2D>().gravityScale = 4;
+			GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+			PlayerCannon.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
 		}
 
 
@@ -120,27 +126,25 @@ public class PlayerController : MonoBehaviour
 		{
 			velocity.y = Math.Sign(velocity.y) * MaxVertSpeed;
 		}
-		
-		if (velocity.y < 0 && !touchingGround)
+
+		if (climbing)
 		{
-			GetComponent<Animator>().SetTrigger("Falling");
-		} else if (Math.Abs(velocity.x) > 0)
+			animator.SetTrigger("Falling");
+		}
+		else if (jumping) 
 		{
-			GetComponent<Animator>().SetTrigger("Running");
+			animator.SetTrigger("Jumping");
+		} 
+		else if (Math.Abs(velocity.x) > 0)
+		{
+			animator.SetTrigger("Running");
 		}
 		else
 		{
-			if(!jumping) GetComponent<Animator>().SetTrigger("Idle");
+			animator.SetTrigger("Idle");
 		}
 		
 		rigidbod2d.velocity = velocity;
-
-        /*if (Math.Abs(velocity.x) > 0)
-		{
-			Vector2 scale = transform.localScale;
-			scale.x = (velocity.x > 0 ? 1 : -1) * Math.Abs(scale.x);
-			transform.localScale = scale;
-		}*/
 
         // flip the player to face the mouse
         Vector3 MousePos = Input.mousePosition;

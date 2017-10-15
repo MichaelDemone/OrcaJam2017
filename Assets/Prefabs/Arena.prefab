@@ -1330,6 +1330,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
   TimeBetweenSpawns: 3
+  SpawnRateMultiplier: 1
+  ReadyPeriodTime: 1
   RapidSpawnWave: 0
 --- !u!114 &114518834585243578
 MonoBehaviour:
@@ -1357,6 +1359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveFrequency: 30
   WaveDuration: 4
+  SpawnRateIncreaseFrequency: 30
   Spawners:
   - {fileID: 1386615328146088}
   - {fileID: 1617290860318448}
@@ -1375,6 +1378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
   TimeBetweenSpawns: 3
+  SpawnRateMultiplier: 1
+  ReadyPeriodTime: 1
   RapidSpawnWave: 0
 --- !u!114 &114708330418178082
 MonoBehaviour:
@@ -1389,6 +1394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
   TimeBetweenSpawns: 3
+  SpawnRateMultiplier: 1
+  ReadyPeriodTime: 1
   RapidSpawnWave: 0
 --- !u!212 &212025143914332800
 SpriteRenderer:
@@ -1504,7 +1511,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 806466405
-  m_SortingLayer: -1
+  m_SortingLayer: -3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 71355a15cbb815841875278c5f44f604, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

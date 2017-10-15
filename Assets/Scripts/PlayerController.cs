@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 	private Rigidbody2D rigidbod2d;
 
     public GameObject PlayerCannon;
+
+    bool paused = false;
 	
 	// Use this for initialization
 	void Start ()
@@ -31,9 +33,24 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		SetMovement();
-        AimCannon();
-		TowerPlacing();
+        if(Input.GetKeyDown("p"))
+        {
+            if (paused)
+            {
+                paused = false;
+                Time.timeScale = 1;
+            } else
+            {
+                paused = true;
+                Time.timeScale = 0;
+            }
+        }
+        if (!paused)
+        {
+            SetMovement();
+            AimCannon();
+            TowerPlacing();
+        }
 	}
 
 	private void SetMovement()
@@ -108,7 +125,6 @@ public class PlayerController : MonoBehaviour
         Vector3 MousePos = Input.mousePosition;
         MousePos.z = 0;
         MousePos = Camera.main.ScreenToWorldPoint(MousePos);
-        print(MousePos.x + ", " + transform.position.x);
         if(MousePos.x < transform.position.x)
         {
             Vector2 scale = transform.localScale;
@@ -151,19 +167,19 @@ public class PlayerController : MonoBehaviour
 
     private void AimCannon()
     {
-        Vector3 MousePos = Input.mousePosition;
-        MousePos.z = 0;
-        MousePos = Camera.main.ScreenToWorldPoint(MousePos);
-        
-        Vector3 direction = MousePos - PlayerCannon.transform.position;
+            Vector3 MousePos = Input.mousePosition;
+            MousePos.z = 0;
+            MousePos = Camera.main.ScreenToWorldPoint(MousePos);
 
-        if (MousePos.x < transform.position.x)
-        {
-            // since the player is flipped to face the mouse, have to account for this
-            direction = direction * -1;
+            Vector3 direction = MousePos - PlayerCannon.transform.position;
+
+            if (MousePos.x < transform.position.x)
+            {
+                // since the player is flipped to face the mouse, have to account for this
+                direction = direction * -1;
+            }
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    }
 }

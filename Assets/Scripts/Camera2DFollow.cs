@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class Camera2DFollow : MonoBehaviour
@@ -14,6 +15,9 @@ public class Camera2DFollow : MonoBehaviour
     private Vector3 m_CurrentVelocity;
     private Vector3 m_LookAheadPos;
 
+    public Vector2 MinPosition = new Vector2(-10, -10);
+    public Vector2 MaxPosition = new Vector2(10, 10);
+    
     // Use this for initialization
     private void Start()
     {
@@ -43,6 +47,9 @@ public class Camera2DFollow : MonoBehaviour
         Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
         Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
 
+        newPos.y = Mathf.Clamp(newPos.y, MinPosition.y, MaxPosition.y);
+        newPos.x = Mathf.Clamp(newPos.x, MinPosition.x, MaxPosition.x);
+        
         transform.position = newPos;
 
         m_LastTargetPosition = target.position;

@@ -8,7 +8,9 @@ public class EnemySpawner : MonoBehaviour
 	public GameObject Enemy;
 	private IEnumerator spawnEnemyloop;
 
-	public float TimeBetweenSpawns = 5f;
+    bool ReadyPeriod = true;
+    public float ReadyPeriodTime = 1.0f;
+    public float TimeBetweenSpawns = 5f;
 
     public bool RapidSpawnWave = false;
     float SpawnWaveTimer;
@@ -45,11 +47,19 @@ public class EnemySpawner : MonoBehaviour
 	{
         while (true)
         {
-            SpawnEnemy();
-            if (RapidSpawnWave) {
-                yield return new WaitForSeconds(TimeBetweenSpawns * 0.15f);
+            if (ReadyPeriod)
+            {
+                yield return new WaitForSeconds(ReadyPeriodTime);
+                ReadyPeriod = false;
             } else {
-                yield return new WaitForSeconds(TimeBetweenSpawns);
+                SpawnEnemy();
+                if (RapidSpawnWave)
+                {
+                    yield return new WaitForSeconds(TimeBetweenSpawns * 0.15f);
+                }
+                else {
+                    yield return new WaitForSeconds(TimeBetweenSpawns);
+                }
             }
 		}
 	}

@@ -12,7 +12,26 @@ public class TowerTargeting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        GameObject target = GetCurrentTarget();
+		if(target != null)
+        {
+            if (target.transform.position.x < gameObject.transform.position.x)
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = -1 * Math.Abs(scale.x);
+                transform.localScale = scale;
+            } else
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = 1 * Math.Abs(scale.x);
+                transform.localScale = scale;
+            }
+        } else
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = 1 * Math.Abs(scale.x);
+            transform.localScale = scale;
+        }
 	}
 	
 	private List<GameObject> targets = new List<GameObject>();

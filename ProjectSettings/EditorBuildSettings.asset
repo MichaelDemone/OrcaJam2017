@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 9b2c97fdc494e3e4baf1b106c6292805
   - enabled: 0
@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BareWorkingScene.unity
     guid: 0d3e8c85e8a7d254ebd8ceb17e27ac7a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lose scene.unity
     guid: b64aef0f6fc9d4f4cbd2867d4efcf7a8
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: d93950f31e42d4e4c96c46e6217c981f

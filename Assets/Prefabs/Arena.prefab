@@ -35,6 +35,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4804288072141674}
+  - component: {fileID: 114017476665348502}
   m_Layer: 0
   m_Name: Spawners
   m_TagString: Untagged
@@ -418,7 +419,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579501323246122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.181122, y: 2.9621556, z: -0.09661823}
+  m_LocalPosition: {x: -28.43, y: 2.9621556, z: -0.09661823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4152394803298034}
@@ -1217,6 +1218,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114017476665348502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043050807506458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205820392a789ee479557bd24380714c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveFrequency: 30
+  WaveDuration: 4
+  Spawners:
+  - {fileID: 1386615328146088}
+  - {fileID: 1617290860318448}
+  - {fileID: 1382324993262578}
+  WarningText: {fileID: 0}
 --- !u!114 &114409676104179554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1230,6 +1249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
   TimeBetweenSpawns: 3
+  RapidSpawnWave: 0
 --- !u!114 &114518834585243578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1256,6 +1276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
   TimeBetweenSpawns: 3
+  RapidSpawnWave: 0
 --- !u!114 &114708330418178082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1269,6 +1290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
   TimeBetweenSpawns: 3
+  RapidSpawnWave: 0
 --- !u!212 &212130500894042932
 SpriteRenderer:
   m_ObjectHideFlags: 1

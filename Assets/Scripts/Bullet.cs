@@ -15,9 +15,11 @@ public class Bullet : MonoBehaviour
 
 	public AudioClip ExplodeClip;
 
+	private IEnumerator autoDestroy;
+	
 	void Start()
 	{
-		StartCoroutine(AutoDestroy());
+		StartCoroutine(autoDestroy = AutoDestroy());
 	}
 	
 	IEnumerator AutoDestroy()
@@ -55,6 +57,20 @@ public class Bullet : MonoBehaviour
 		}
             
 		AudioPlayer.PlayFile(ExplodeClip, 0.2f);
-		Destroy(gameObject);
+
+		Animator anim;
+		if ((anim = GetComponent<Animator>()) != null)
+		{
+			StopCoroutine(autoDestroy);
+
+			anim.SetTrigger("Explode");
+			GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+			Destroy(gameObject, 1f);
+			Destroy(this);
+		}
+		else
+		{
+			Destroy(gameObject);
+		}	
 	}
 }

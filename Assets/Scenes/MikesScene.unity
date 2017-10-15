@@ -147,17 +147,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1389791465530318, guid: c68b231009781184683260f3fd0ea15c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114883993411895268, guid: c68b231009781184683260f3fd0ea15c,
-        type: 2}
-      propertyPath: FireRate
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114307327891649220, guid: c68b231009781184683260f3fd0ea15c, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c68b231009781184683260f3fd0ea15c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &188911558

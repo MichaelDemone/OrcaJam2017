@@ -21,10 +21,8 @@ public class Enemy : MonoBehaviour {
 
 	public virtual void TalkShitGetHit(int damage)
 	{
-		print("OUCH, THAT HURT");
 		if (enemyCurrentHP > damage) {
 			enemyCurrentHP = enemyCurrentHP - damage;
-			print("My hp is now " + enemyCurrentHP);
 		} else
 			Die();
 	}
@@ -32,7 +30,6 @@ public class Enemy : MonoBehaviour {
 	public virtual void Die()
     {
         UIText.GetComponent<UpdateUI>().NumEnemies -= 1;
-        print("ded");
 		Destroy(this.gameObject);
 	}
 }

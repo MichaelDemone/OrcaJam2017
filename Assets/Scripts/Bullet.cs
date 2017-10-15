@@ -24,7 +24,6 @@ public class Bullet : MonoBehaviour
 	{
 		if (other.gameObject.GetComponent<Enemy>() != null)
 		{
-			print("Hit!");
 			Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
 			foreach (var col in cols)
 			{

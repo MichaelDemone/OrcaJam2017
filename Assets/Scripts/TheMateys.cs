@@ -37,10 +37,8 @@ public class TheMateys : MonoBehaviour {
     }
 
     private void ArrMateysBeenHurtRealBad(int damage) {
-        print("THEY BE HURTIN YOUR MATEYS");
         if (mateysCurrentHP > damage) {
             mateysCurrentHP = mateysCurrentHP - damage;
-            print("YOU ONLY HAVE " + mateysCurrentHP + " MATEYS LEFT");
         } else
             ArrTheyKilledTheMateys();
     }

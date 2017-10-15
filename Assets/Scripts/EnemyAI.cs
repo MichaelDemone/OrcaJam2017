@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters;
 using UnityEngine;
 
-public class EnemyAI : Enemy {
+public class EnemyAI : Enemy
+{
+    public Transform GroundCheckLeft;
+    public Transform GroundCheckRight;
+    
     public float moveVelocity = 4f;
     public int jumpVelocity = 10;
     private bool touchingGround = false;
@@ -24,20 +29,29 @@ public class EnemyAI : Enemy {
         GetRays();
 
 
-        if (touchingGround) {
+        if (touchingGround) 
+        {
             body.velocity = new Vector2(-moveVelocity, 0);
-            if (CheckJump() && !CheckSlope()) {
-                if (WillJump(randomNumber()) && !aboutToFall) {
+            
+            if (CheckJump() && !CheckSlope()) 
+            {
+                if (WillJump(randomNumber()) && !aboutToFall) 
+                {
                     Jump();
-                } else {
+                } 
+                else 
+                {
                     aboutToFall = true;
                 }
             }
-            if (CheckFall()) {
+            
+            if (CheckFall() || Physics2D.LinecastAll(GroundCheckLeft.position, GroundCheckRight.position).Any(col => col.collider.gameObject.layer == 8)) 
+            {
                 Fall();
             }
 
-            if (CheckHill()) {
+            if (CheckHill()) 
+            {
                 body.velocity = new Vector2(-moveVelocity, jumpVelocity/2);
             }
         } 
@@ -74,13 +88,11 @@ public class EnemyAI : Enemy {
     }
 
     private void Jump() {
-        print("I'm going to jump!");
         touchingGround = false;
         body.velocity = new Vector2(-moveVelocity*jumpSpeedMod, jumpVelocity);
     }
 
     private void Fall() {
-        print("I'M FREE... FREE FAAAAALING!");
         touchingGround = false;
         body.velocity = new Vector2(-moveVelocity/fallSpeedMod, 0);
     }

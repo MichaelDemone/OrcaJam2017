@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
 	public float TimeBeforeDestroy = 3f;
 	public float ExplosionRadius = 5;
-    public int damage;
-    public bool destroyed = false;
+    public int RegularDamage;
+	public int SplashDamage;
 
+
+	public AudioClip ExplodeClip;
 
 	void Start()
 	{
@@ -19,24 +23,38 @@ public class Bullet : MonoBehaviour
 	IEnumerator AutoDestroy()
 	{
 		yield return new WaitForSeconds(TimeBeforeDestroy);
-        destroyed = true;
         Destroy(gameObject);
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.GetComponent<Enemy>() != null)
+		Enemy hitEnemy;
+		if ((hitEnemy = other.GetComponent<Enemy>()) == null && other.gameObject.layer != 8) return;
+		
+		
+		if (hitEnemy != null)
 		{
-			Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
+			hitEnemy.TalkShitGetHit(RegularDamage);
+		}
+		
+		Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
 
-            other.gameObject.GetComponent<Enemy>().TalkShitGetHit(damage);
-            destroyed = true;
-            Destroy(gameObject);
-		}
-		else if (other.gameObject.layer == 8)
+		var enemyCols = cols.Select(col => col.GetComponent<Enemy>());
+		Vector2 thisPos = transform.position;
+
+		foreach (var enemy in enemyCols)
 		{
-            destroyed = true;
-			Destroy(gameObject);
+			if (enemy == hitEnemy || enemy == null) continue;
+				
+			Vector2 enemyPos = enemy.gameObject.transform.position;
+			float dist = (enemyPos - thisPos).magnitude;
+			if (dist < 1) dist = 1;
+				
+			enemy.TalkShitGetHit(Mathf.RoundToInt((1 / dist) * SplashDamage));
+			print("hit enemy with splash");
 		}
+            
+		AudioPlayer.PlayFile(ExplodeClip, 0.2f);
+		Destroy(gameObject);
 	}
 }

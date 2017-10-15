@@ -36,8 +36,12 @@ public class TheMateys : MonoBehaviour {
         }
     }
 
+    public AudioClip MateyHurtClip;
+    
     private void ArrMateysBeenHurtRealBad(int damage) {
-        GetComponent<AudioSource>().Play();
+        
+        AudioPlayer.PlayFile(MateyHurtClip, 0.2f);
+        
         if (mateysCurrentHP > damage) {
             mateysCurrentHP = mateysCurrentHP - damage;
         } else

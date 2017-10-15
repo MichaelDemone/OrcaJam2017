@@ -9,10 +9,9 @@ public class AudioPlayer : MonoBehaviour
 	private static AudioPlayer instance;
 	private static AudioSource audioSource;
 	
-	public static void PlayFile(AudioClip clip)
+	public static void PlayFile(AudioClip clip, float volume)
 	{
-		audioSource.PlayOneShot(clip);
-
+		audioSource.PlayOneShot(clip, volume);
 	}
 	
 	// Use this for initialization

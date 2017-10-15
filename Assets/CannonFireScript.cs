@@ -62,7 +62,7 @@ public class CannonFireScript : MonoBehaviour {
 
                 bullet.GetComponent<Rigidbody2D>().velocity = direction2.normalized * BulletSpeed + PlayerVelocity;
 
-                AudioPlayer.PlayFile(FiringSound);
+                AudioPlayer.PlayFile(FiringSound, 0.2f);
 
                 WeaponCooldown = FireRate;
             }

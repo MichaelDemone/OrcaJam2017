@@ -11,11 +11,11 @@ public class TowerShooting : MonoBehaviour
 	public GameObject Bullet;
     public GameObject cannon;
 
-    public AudioSource shoot, hit;
-
 	public float ShootingDelay = 2;
 
 	public float EnemyPositionInSecond = 0.2f;
+
+	public AudioClip ShootClip;
 	
 	// Use this for initialization
 	void Start ()
@@ -45,7 +45,7 @@ public class TowerShooting : MonoBehaviour
 		Vector2 velocity = GetVelocityToKill(transform.position, enemy, enemyVelocity);
 
 		GameObject bullet = Instantiate(Bullet);
-        shoot.Play();
+        AudioPlayer.PlayFile(ShootClip, 0.5f);
        // bullet.GetComponent<AudioSource>().Play();
 		bullet.transform.position = transform.position;
         float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;

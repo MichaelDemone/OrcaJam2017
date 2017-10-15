@@ -9,6 +9,7 @@ public class TowerShooting : MonoBehaviour
 	
 	public float ProjectileSpeed = 4f;
 	public GameObject Bullet;
+    public GameObject cannon;
 
     public AudioSource shoot, hit;
 
@@ -47,6 +48,8 @@ public class TowerShooting : MonoBehaviour
         shoot.Play();
        // bullet.GetComponent<AudioSource>().Play();
 		bullet.transform.position = transform.position;
+        float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+        cannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		bullet.GetComponent<Rigidbody2D>().velocity = velocity;
 	}
 

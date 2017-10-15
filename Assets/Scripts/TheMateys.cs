@@ -50,7 +50,7 @@ public class TheMateys : MonoBehaviour {
 
     private void ArrTheyKilledTheMateys() {
         print("THEY KILLED ALL YOUR MATEYS");
-        SceneManager.LoadScene("Lose scene");
+        SceneManager.LoadScene("EndGame");
     }
 }
 

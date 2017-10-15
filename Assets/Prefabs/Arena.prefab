@@ -51,7 +51,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4804288072141674}
-  - component: {fileID: 114273416507426564}
   - component: {fileID: 114789484949819320}
   m_Layer: 0
   m_Name: Spawners
@@ -2813,25 +2812,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114273416507426564
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1043050807506458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205820392a789ee479557bd24380714c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WaveFrequency: 30
-  WaveDuration: 4
-  SpawnRateIncreaseFrequency: 30
-  Spawners:
-  - {fileID: 1386615328146088}
-  - {fileID: 1617290860318448}
-  - {fileID: 1382324993262578}
-  WarningText: {fileID: 0}
 --- !u!114 &114409676104179554
 MonoBehaviour:
   m_ObjectHideFlags: 1

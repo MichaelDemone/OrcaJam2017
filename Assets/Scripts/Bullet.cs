@@ -19,7 +19,8 @@ public class Bullet : MonoBehaviour
 	IEnumerator AutoDestroy()
 	{
 		yield return new WaitForSeconds(TimeBeforeDestroy);
-		Destroy(gameObject);
+        destroyed = true;
+        Destroy(gameObject);
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -29,7 +30,8 @@ public class Bullet : MonoBehaviour
 			Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
 
             other.gameObject.GetComponent<Enemy>().TalkShitGetHit(damage);
-			Destroy(gameObject);
+            destroyed = true;
+            Destroy(gameObject);
 		}
 		else if (other.gameObject.layer == 8)
 		{

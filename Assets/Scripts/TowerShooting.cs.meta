@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 89d3a5d1308ec464fbfff1b88a3ac737
-timeCreated: 1507962577
+timeCreated: 1508088722
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Bullet: {instanceID: 0}
+  - cannon: {fileID: 1785857731099872, guid: 5384b09f48f92ec42a1903bbb9ce8b90, type: 2}
+  - shoot: {instanceID: 0}
+  - hit: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

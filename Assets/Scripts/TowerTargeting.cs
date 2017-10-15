@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerTargeting : MonoBehaviour {
-
+    public GameObject cannon;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,6 +13,7 @@ public class TowerTargeting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GameObject target = GetCurrentTarget();
+      
 		if(target != null)
         {
             if (target.transform.position.x < gameObject.transform.position.x)
@@ -20,17 +21,20 @@ public class TowerTargeting : MonoBehaviour {
                 Vector3 scale = transform.localScale;
                 scale.x = -1 * Math.Abs(scale.x);
                 transform.localScale = scale;
+                cannon.transform.localScale = scale;
             } else
             {
                 Vector3 scale = transform.localScale;
                 scale.x = 1 * Math.Abs(scale.x);
                 transform.localScale = scale;
+                cannon.transform.localScale = scale;
             }
         } else
         {
             Vector3 scale = transform.localScale;
             scale.x = 1 * Math.Abs(scale.x);
             transform.localScale = scale;
+            cannon.transform.localScale = scale;
         }
 	}
 	

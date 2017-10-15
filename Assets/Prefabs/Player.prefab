@@ -82,7 +82,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1944512439026740
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2cadfff920d93a74dbabcec91cb325a1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f3cb3bbf503c21540ac03bc454c78db7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -364,11 +364,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1304942780868714}
-  FireRate: 0.1
+  FireRate: 0.25
   BulletSpeed: 60
   Bullet: {fileID: 1716955228109920, guid: 023b2a4e6c9a9234ba052327e01faf6d, type: 2}
   flip: 0
-  FiringSound: {fileID: 8300000, guid: 2cadfff920d93a74dbabcec91cb325a1, type: 3}
+  FiringSound: {fileID: 8300000, guid: f3cb3bbf503c21540ac03bc454c78db7, type: 3}
 --- !u!198 &198169961634738434
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -428,7 +428,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 476740923
+  randomSeed: -1904864742
   InitialModule:
     serializedVersion: 3
     enabled: 1

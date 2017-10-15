@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
         {
             SetMovement();
             AimCannon();
-            TowerPlacing();
         }
 	}
 
@@ -143,27 +142,6 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.position = new Vector3(5, -7, 0);
         }
 
-	}
-
-	private bool towerClicked = false;
-	private void TowerPlacing()
-	{
-
-		if (Input.GetAxis("PlaceTower") != 0 && !towerClicked)
-		{
-			towerClicked = true;
-			GetComponent<PlayerTowerInteractions>().PlaceTower(transform.localScale.x < 0);
-		}
-		else if (Input.GetAxis("PlaceTower") == 0)
-		{
-			towerClicked = false;
-		}
-
-		if (Input.GetAxis("RemoveTower") != 0)
-		{
-			towerClicked = true;
-			GetComponent<PlayerTowerInteractions>().RetreiveTower(transform.localScale.x < 0);
-		}
 	}
 
     private void AimCannon()

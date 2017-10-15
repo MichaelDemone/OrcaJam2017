@@ -34,8 +34,8 @@ public class UpdateUI : MonoBehaviour
         int maxTowers = player.GetComponent<PlayerTowerInteractions>().MaxNumberOfTowers;
 
         SetNumbers(mateysHP, Matey1, Matey2);
-        TowerMax.sprite = Numbers[numTowers];
-        TowerCurrent.sprite = Numbers[maxTowers];
+        TowerMax.sprite = Numbers[Mathf.Clamp(maxTowers, 0, 9)];
+        TowerCurrent.sprite = Numbers[Mathf.Clamp(numTowers, 0, 9)];
         SetNumbers(NumEnemies, Enemy1, Enemy2);
     }
 

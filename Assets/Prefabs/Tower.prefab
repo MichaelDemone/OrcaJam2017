@@ -221,7 +221,7 @@ MonoBehaviour:
   ProjectileSpeed: 10
   Bullet: {fileID: 1716955228109920, guid: 17be675dbc5d2a240b921189077d35ca, type: 2}
   cannon: {fileID: 1785857731099872}
-  ShootingDelay: 1
+  ShootingDelay: 4
   EnemyPositionInSecond: 0.2
   ShootClip: {fileID: 8300000, guid: f4b75562b028ec9408d0b9b85fd565d6, type: 3}
   particles: {fileID: 198230468340837236}

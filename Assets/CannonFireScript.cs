@@ -18,6 +18,8 @@ public class CannonFireScript : MonoBehaviour {
     private Animator animator;
 
     private ParticleSystem system;
+
+    public float FireRateBuffPerParrot = 0.025f;
     
     // Use this for initialization
     void Start ()
@@ -40,8 +42,6 @@ public class CannonFireScript : MonoBehaviour {
 
     public void Fire()
     {
-        
-
 	    if (Input.GetAxis("Fire1") != 0)
 	    {
             if (WeaponCooldown <= 0)
@@ -77,5 +77,10 @@ public class CannonFireScript : MonoBehaviour {
                 WeaponCooldown = FireRate;
             }
 	    }
+    }
+
+    public void BirdKilled()
+    {
+        FireRate += FireRateBuffPerParrot;
     }
 }

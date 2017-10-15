@@ -22,8 +22,8 @@ public class UpdateUI : MonoBehaviour
         int mateysHP = mateys.GetComponent<TheMateys>().mateysCurrentHP;
         int numTowers = player.GetComponent<PlayerTowerInteractions>().NumberOfTowersPlaced;
         int maxTowers = player.GetComponent<PlayerTowerInteractions>().MaxNumberOfTowers;
-        gameObject.GetComponent<Text>().text = "Mateys: " + mateysHP + "\n" +
-            "Towers: " + numTowers + "/" + maxTowers + "\n"
-            + "Enemies: " + NumEnemies;
+        gameObject.GetComponent<Text>().text = mateysHP + "\n" +
+            numTowers + "/" + maxTowers + "\n"
+            + NumEnemies;
     }
 }

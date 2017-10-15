@@ -182,7 +182,11 @@ public class PlayerController : MonoBehaviour
 		{
 			// since the player is flipped to face the mouse, have to account for this
 			direction = direction * -1;
-		}
+            PlayerCannon.GetComponent<CannonFireScript>().flip = true;
+        } else
+        {
+            PlayerCannon.GetComponent<CannonFireScript>().flip = false;
+        }
 
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		PlayerCannon.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

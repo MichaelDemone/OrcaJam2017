@@ -8,8 +8,8 @@ public class FlyboiAI : Enemy {
     private Vector3 vLastPos;
     public float flyboiSpeed = 3f;
     
-    public int amplitudeMod=15;
-    public int wavelengthMod = 3;
+    public int amplitudeMod=1;
+    public int wavelengthMod = 1;
     public int enemyDamage = 1;
 
 

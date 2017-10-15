@@ -1052,6 +1052,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114718142082107438, guid: c68b231009781184683260f3fd0ea15c,
+        type: 2}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114448598679981860, guid: c68b231009781184683260f3fd0ea15c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c68b231009781184683260f3fd0ea15c, type: 2}
@@ -1149,6 +1154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mateys: {fileID: 1451841498}
   NumEnemies: 0
+  player: {fileID: 1668415361}
 --- !u!1001 &1756087495
 Prefab:
   m_ObjectHideFlags: 0

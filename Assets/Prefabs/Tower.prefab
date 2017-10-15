@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0cbc2a57240d940bdf6b0f5488f0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cannon: {fileID: 1785857731099872}
 --- !u!114 &114992746149950476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectileSpeed: 10
   Bullet: {fileID: 1716955228109920, guid: 17be675dbc5d2a240b921189077d35ca, type: 2}
+  cannon: {fileID: 1785857731099872}
   shoot: {fileID: 82840391076341292}
   hit: {fileID: 0}
   ShootingDelay: 1

@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
 	}
 
 	private bool climbing = false;
+	private bool falling = false;
 	
 	private void SetMovement()
 	{
@@ -69,6 +70,8 @@ public class PlayerController : MonoBehaviour
 
 		bool touchingGround = Physics2D.OverlapPointAll(GroundCheck.position).Any(col => col.CompareTag("Ground"));
 
+		falling = false;
+		
 		if (touchingGround && Input.GetAxis("Jump") > 0 && !jumping)
 		{
 			velocity.y += Input.GetAxis("Jump") * JumpSpeed;
@@ -91,6 +94,11 @@ public class PlayerController : MonoBehaviour
 		else if (velocity.y > 0 && Input.GetAxis("Jump") < 0.1f)
 		{
 			velocity.y = 0;
+			falling = true;
+		}
+		else if (velocity.y < -0.1f)
+		{
+			falling = true;
 		}
 
 		Collider2D[] overlapCols = Physics2D.OverlapPointAll(transform.position);
@@ -127,22 +135,7 @@ public class PlayerController : MonoBehaviour
 			velocity.y = Math.Sign(velocity.y) * MaxVertSpeed;
 		}
 
-		if (climbing)
-		{
-			animator.SetTrigger("Falling");
-		}
-		else if (jumping) 
-		{
-			animator.SetTrigger("Jumping");
-		} 
-		else if (Math.Abs(velocity.x) > 0)
-		{
-			animator.SetTrigger("Running");
-		}
-		else
-		{
-			animator.SetTrigger("Idle");
-		}
+		SetAnimator();
 		
 		rigidbod2d.velocity = velocity;
 
@@ -170,7 +163,55 @@ public class PlayerController : MonoBehaviour
 
 	}
 
-    private void AimCannon()
+
+	private enum animationState
+	{
+		falling,
+		jumping,
+		running,
+		idle,
+	}
+
+	private animationState AnimationState;
+	
+	private void SetAnimator()
+	{
+		if (climbing || falling)
+		{
+			if (AnimationState != animationState.falling)
+			{
+				AnimationState = animationState.falling;
+				animator.SetTrigger("Falling");
+			}
+		}
+		else if (jumping)
+		{
+			if (AnimationState != animationState.jumping)
+			{
+				AnimationState = animationState.jumping;
+				animator.SetTrigger("Jumping");
+			}
+		}
+		else if (Math.Abs(velocity.x) > 0)
+		{
+			if(AnimationState != animationState.running)
+			{
+				AnimationState = animationState.running;
+				animator.SetTrigger("Running");
+			}
+			
+		}
+		else 
+		{
+			if (AnimationState != animationState.idle)
+			{
+				AnimationState = animationState.idle;
+				animator.SetTrigger("Idle");
+			}
+		}
+	}
+
+	private void AimCannon()
     {
 		Vector3 MousePos = Input.mousePosition;
 		MousePos.z = 0;

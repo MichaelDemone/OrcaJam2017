@@ -318,11 +318,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d3a5d1308ec464fbfff1b88a3ac737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileSpeed: 10
+  ProjectileSpeed: 12
   Bullet: {fileID: 1716955228109920, guid: 17be675dbc5d2a240b921189077d35ca, type: 2}
   shoot: {fileID: 82979518451693096}
   hit: {fileID: 82554522131751090}
-  ShootingDelay: 2
+  ShootingDelay: 1
   EnemyPositionInSecond: 0.2
 --- !u!212 &212452063539038244
 SpriteRenderer:
@@ -333,7 +333,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -349,7 +348,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

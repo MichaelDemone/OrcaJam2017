@@ -205,8 +205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d54cddadf460248be1a125a9023f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHP: 10
+  enemyMaxHP: 30
   enemyCurrentHP: 0
+  UIText: {fileID: 0}
   moveVelocity: 4
   jumpVelocity: 25
   jumpSpeedMod: 5
@@ -225,7 +226,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -241,7 +241,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

@@ -74,13 +74,13 @@ public class EnemyAI : Enemy {
     }
 
     private void Jump() {
-        print("I'm going to jump!");
+        //print("I'm going to jump!");
         touchingGround = false;
         body.velocity = new Vector2(-moveVelocity*jumpSpeedMod, jumpVelocity);
     }
 
     private void Fall() {
-        print("I'M FREE... FREE FAAAAALING!");
+        //print("I'M FREE... FREE FAAAAALING!");
         touchingGround = false;
         body.velocity = new Vector2(-moveVelocity/fallSpeedMod, 0);
     }

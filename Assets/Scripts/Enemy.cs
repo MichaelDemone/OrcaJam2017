@@ -5,7 +5,7 @@ using UnityEngine.Windows.Speech;
 
 public class Enemy : MonoBehaviour {
 
-	public int enemyMaxHP = 10;
+	public int enemyMaxHP;
 	public int enemyCurrentHP;
 	protected Rigidbody2D body;
 
@@ -22,11 +22,14 @@ public class Enemy : MonoBehaviour {
 	public virtual void TalkShitGetHit(int damage)
 	{
 		print("OUCH, THAT HURT");
-		if (enemyCurrentHP > damage) {
-			enemyCurrentHP = enemyCurrentHP - damage;
-			print("My hp is now " + enemyCurrentHP);
-		} else
-			Die();
+        if (enemyCurrentHP > damage)
+        {
+            enemyCurrentHP = enemyCurrentHP - damage;
+            print("My hp is now " + enemyCurrentHP);
+        }
+        else {
+            Die();
+        }
 	}
 
 	public virtual void Die()

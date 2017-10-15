@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
 	public float TimeJumpingStaysAffecting = 1;
 	public float MaxClimbSpeed = 3f;
 
-	public float BulletSpeed = 6;
+    //public float firerate;
+    //float firedelay = 0;
+
+	//public float BulletSpeed;
 	
 	public Transform GroundCheck;
 	
@@ -19,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject PlayerCannon;
 
-	public GameObject Bullet;
+	//public GameObject Bullet;
 	
     public bool paused = false;
 	
@@ -165,16 +168,7 @@ public class PlayerController : MonoBehaviour
 
 	    if (Input.GetAxis("Fire1") != 0)
 	    {
-		    GameObject bullet = Instantiate(Bullet, transform.position, Quaternion.identity);
-		    
-		    Vector3 MousePos2 = Input.mousePosition;
-		    MousePos2.z = 0;
-		    MousePos2 = Camera.main.ScreenToWorldPoint(MousePos2);
-		    
-		    Vector3 direction2 = MousePos - PlayerCannon.transform.position;
-
-		    
-		    bullet.GetComponent<Rigidbody2D>().velocity = direction2.normalized * BulletSpeed;
+            PlayerCannon.GetComponent<CannonFireScript>().Fire();
 	    }
 	    
     }

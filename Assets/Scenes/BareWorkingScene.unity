@@ -1072,7 +1072,7 @@ GameObject:
   - component: {fileID: 1709843733}
   - component: {fileID: 1709843735}
   m_Layer: 5
-  m_Name: Text
+  m_Name: UIText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,8 +1093,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -365, y: 206.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -365, y: 141}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1709843733
 MonoBehaviour:
@@ -1147,6 +1147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mateys: {fileID: 1451841498}
+  NumEnemies: 0
 --- !u!1001 &1756087495
 Prefab:
   m_ObjectHideFlags: 0
@@ -1186,6 +1187,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114661448183578604, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: UIText
+      value: 
+      objectReference: {fileID: 1709843731}
+    - target: {fileID: 114409676104179554, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: UIText
+      value: 
+      objectReference: {fileID: 1709843731}
+    - target: {fileID: 114708330418178082, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: UIText
+      value: 
+      objectReference: {fileID: 1709843731}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afc203e78d10506429d333a1f7b683ad, type: 2}
   m_IsPrefabParent: 0

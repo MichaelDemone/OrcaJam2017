@@ -366,6 +366,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 555350589}
+    - target: {fileID: 114846022648405040, guid: 0eac8e93ef3049e4997456a7b830b440,
+        type: 2}
+      propertyPath: Scoreboard
+      value: 
+      objectReference: {fileID: 1621158354}
     - target: {fileID: 114091922977625002, guid: 0eac8e93ef3049e4997456a7b830b440,
         type: 2}
       propertyPath: player
@@ -549,6 +554,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1579501323246122, guid: afc203e78d10506429d333a1f7b683ad,
     type: 2}
   m_PrefabInternal: {fileID: 298931955}
+--- !u!114 &1621158354 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114818266363751396, guid: a7d90aff71c3d7645bec264a84da42b5,
+    type: 2}
+  m_PrefabInternal: {fileID: 2112009613}
+  m_Script: {fileID: 11500000, guid: 6b470c2f6aef50e408c8c828db8eae3f, type: 3}
 --- !u!1001 &1672229172
 Prefab:
   m_ObjectHideFlags: 0

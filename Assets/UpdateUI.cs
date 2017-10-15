@@ -20,6 +20,8 @@ public class UpdateUI : MonoBehaviour
     public int NumEnemies = 0;
     public GameObject player;
 
+    public Scoreboard Scoreboard;
+    
     // Use this for initialization
     void Start()
     {
@@ -36,7 +38,7 @@ public class UpdateUI : MonoBehaviour
         SetNumbers(mateysHP, Matey1, Matey2);
         TowerMax.sprite = Numbers[Mathf.Clamp(maxTowers, 0, 9)];
         TowerCurrent.sprite = Numbers[Mathf.Clamp(numTowers, 0, 9)];
-        SetNumbers(NumEnemies, Enemy1, Enemy2);
+        SetNumbers(Scoreboard.score, Enemy1, Enemy2);
     }
 
     void SetNumbers(int number, Image firstDigitSprite, Image secondDigitSprite)

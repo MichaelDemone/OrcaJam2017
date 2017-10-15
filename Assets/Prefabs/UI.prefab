@@ -985,6 +985,7 @@ MonoBehaviour:
   mateys: {fileID: 0}
   NumEnemies: 0
   player: {fileID: 0}
+  Scoreboard: {fileID: 0}
 --- !u!114 &114853586171340692
 MonoBehaviour:
   m_ObjectHideFlags: 1

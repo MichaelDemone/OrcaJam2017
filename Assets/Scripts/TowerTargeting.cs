@@ -29,12 +29,14 @@ public class TowerTargeting : MonoBehaviour {
                 transform.localScale = scale;
                 cannon.transform.localScale = scale;
             }
-        } else
+        } 
+		else
         {
             Vector3 scale = transform.localScale;
             scale.x = 1 * Math.Abs(scale.x);
             transform.localScale = scale;
             cannon.transform.localScale = scale;
+	        cannon.transform.rotation = Quaternion.identity;
         }
 	}
 	

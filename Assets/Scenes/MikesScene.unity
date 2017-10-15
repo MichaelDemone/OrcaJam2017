@@ -567,6 +567,24 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[28].y
       value: 4.809749
       objectReference: {fileID: 0}
+    - target: {fileID: 114661448183578604, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db,
+        type: 2}
+    - target: {fileID: 114409676104179554, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db,
+        type: 2}
+    - target: {fileID: 114708330418178082, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afc203e78d10506429d333a1f7b683ad, type: 2}
   m_IsPrefabParent: 0

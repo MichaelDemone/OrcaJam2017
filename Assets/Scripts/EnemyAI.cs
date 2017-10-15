@@ -79,7 +79,6 @@ public class EnemyAI : Enemy
 
     private bool CheckHill() {
         return hillRay.Any(ray => ray.collider != null && ray.collider.CompareTag("Ground"));
-
     }
 
     private bool CheckSlope() {

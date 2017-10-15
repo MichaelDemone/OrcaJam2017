@@ -15,10 +15,13 @@ public class CannonFireScript : MonoBehaviour {
 
     public AudioClip FiringSound;
     
+    private Animator animator;
+    
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start ()
+    {
+        //animator.GetComponent<Animator>();
+    }
 	
 	// Update is called once per frame
 	void Update ()

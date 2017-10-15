@@ -45,7 +45,7 @@ public class EnemyAI : Enemy
                 }
             }
             
-            if (CheckFall() || Physics2D.LinecastAll(GroundCheckLeft.position, GroundCheckRight.position).Any(col => col.collider.gameObject.layer == 8)) 
+            if (CheckFall()) 
             {
                 Fall();
             }

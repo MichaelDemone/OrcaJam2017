@@ -5,7 +5,7 @@ using UnityEngine.Windows.Speech;
 
 public class Enemy : MonoBehaviour {
 
-	public int enemyMaxHP = 10;
+	public int enemyMaxHP;
 	public int enemyCurrentHP;
 	protected Rigidbody2D body;
 

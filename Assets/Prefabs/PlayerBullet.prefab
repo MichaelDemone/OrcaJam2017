@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBeforeDestroy: 3
   ExplosionRadius: 0
-  damage: 3
+  damage: 10
 --- !u!212 &212422943256908256
 SpriteRenderer:
   m_ObjectHideFlags: 1

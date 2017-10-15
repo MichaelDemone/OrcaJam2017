@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 {
 	public float TimeBeforeDestroy = 3f;
 	public float ExplosionRadius = 5;
-    public int damage = 3;
+    public int damage;
 
 	void Start()
 	{
@@ -25,14 +25,8 @@ public class Bullet : MonoBehaviour
 		if (other.gameObject.GetComponent<Enemy>() != null)
 		{
 			Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
-			foreach (var col in cols)
-			{
-				Enemy test;
-				if ((test = col.GetComponent<Enemy>()) != null)
-				{
-					test.TalkShitGetHit(damage);
-				}
-			}
+
+            other.gameObject.GetComponent<Enemy>().TalkShitGetHit(damage);
 			Destroy(gameObject);
 		}
 		else if (other.gameObject.layer == 8)

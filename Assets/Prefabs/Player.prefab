@@ -202,6 +202,8 @@ MonoBehaviour:
   FireRate: 0.25
   BulletSpeed: 30
   Bullet: {fileID: 1716955228109920, guid: 023b2a4e6c9a9234ba052327e01faf6d, type: 2}
+  flip: 0
+  FiringSound: {fileID: 8300000, guid: 2cadfff920d93a74dbabcec91cb325a1, type: 3}
 --- !u!114 &114547698157409430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,6 +254,8 @@ MonoBehaviour:
   FireRate: 0.1
   BulletSpeed: 60
   Bullet: {fileID: 1716955228109920, guid: 023b2a4e6c9a9234ba052327e01faf6d, type: 2}
+  flip: 0
+  FiringSound: {fileID: 0}
 --- !u!212 &212855827647638340
 SpriteRenderer:
   m_ObjectHideFlags: 1

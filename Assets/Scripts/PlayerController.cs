@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
 			velocity.y += Input.GetAxis("Jump") * JumpSpeed;
 			jumping = true;
 			timeJumping = 0;
+			GetComponent<Animator>().SetTrigger("Jumping");
 		}
 		else if (jumping)
 		{
@@ -95,10 +96,14 @@ public class PlayerController : MonoBehaviour
 		Collider2D[] overlapCols = Physics2D.OverlapPointAll(transform.position);
 		bool overlayClimable = overlapCols.Any(overlapCol => overlapCol.CompareTag("Climbable"));
 
+		GetComponent<Collider2D>().enabled = true;
+
+		
 		if (overlayClimable)
 		{
 			GetComponent<Rigidbody2D>().gravityScale = 0;
 			velocity.y = Input.GetAxis("Vertical") * MaxClimbSpeed;
+			GetComponent<Collider2D>().enabled = false;
 		}
 		else
 		{
@@ -115,7 +120,19 @@ public class PlayerController : MonoBehaviour
 		{
 			velocity.y = Math.Sign(velocity.y) * MaxVertSpeed;
 		}
-
+		
+		if (velocity.y < 0 && !touchingGround)
+		{
+			GetComponent<Animator>().SetTrigger("Falling");
+		} else if (Math.Abs(velocity.x) > 0)
+		{
+			GetComponent<Animator>().SetTrigger("Running");
+		}
+		else
+		{
+			if(!jumping) GetComponent<Animator>().SetTrigger("Idle");
+		}
+		
 		rigidbod2d.velocity = velocity;
 
         /*if (Math.Abs(velocity.x) > 0)

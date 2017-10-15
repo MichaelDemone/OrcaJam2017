@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour {
 	    
 	    if(this.GetType() == typeof(FlyboiAI))
 	    {
-		    playerFiring.FireRate *= 0.5f;
+		    playerFiring.BirdKilled();
 	    }
 	}
 }

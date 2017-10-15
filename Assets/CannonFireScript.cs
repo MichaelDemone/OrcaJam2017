@@ -54,10 +54,13 @@ public class CannonFireScript : MonoBehaviour {
                 MousePos = Camera.main.ScreenToWorldPoint(MousePos);
 
                 Vector3 direction2 = MousePos - gameObject.transform.position;
+                direction2.z = 0;
 
                 Vector3 PlayerVelocity = Player.GetComponent<Rigidbody2D>().velocity;
 
                 bullet.GetComponent<Rigidbody2D>().velocity = direction2.normalized * BulletSpeed + PlayerVelocity;
+
+                print(BulletSpeed);
 
                 bullet.GetComponent<AudioSource>().Play();
 

@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
 	public float ExplosionRadius = 5;
     public int damage;
 
+
+
 	void Start()
 	{
 		StartCoroutine(AutoDestroy());

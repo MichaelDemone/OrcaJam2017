@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
 		bool touchingGround = Physics2D.OverlapPointAll(GroundCheck.position).Any(col => col.CompareTag("Ground"));
 
-		falling = false;
+		falling = !touchingGround;
 		
 		if (touchingGround && Input.GetAxis("Jump") > 0 && !jumping)
 		{
@@ -90,15 +90,12 @@ public class PlayerController : MonoBehaviour
 				}
 				velocity.y += JumpSpeed * (TimeJumpingStaysAffecting - timeJumping) / TimeJumpingStaysAffecting;
 			}
-		}
-		else if (velocity.y > 0 && Input.GetAxis("Jump") < 0.1f)
-		{
-			velocity.y = 0;
-			falling = true;
-		}
-		else if (velocity.y < -0.1f)
-		{
-			falling = true;
+
+			if (!jumping)
+			{
+				velocity.y = 0;
+				falling = true;
+			}
 		}
 
 		Collider2D[] overlapCols = Physics2D.OverlapPointAll(transform.position);
@@ -199,7 +196,6 @@ public class PlayerController : MonoBehaviour
 				AnimationState = animationState.running;
 				animator.SetTrigger("Running");
 			}
-			
 		}
 		else 
 		{

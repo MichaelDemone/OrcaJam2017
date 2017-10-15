@@ -258,6 +258,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114883993411895268, guid: c68b231009781184683260f3fd0ea15c,
+        type: 2}
+      propertyPath: BulletSpeed
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c68b231009781184683260f3fd0ea15c, type: 2}
   m_IsPrefabParent: 0
@@ -544,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100a9817f6d5548478327470ab9161d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 555350589}
 --- !u!1 &424630955
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a258d63b1c6aa3448bdd61944562db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 555350589}
 --- !u!114 &1014034468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1337,19 +1342,47 @@ Prefab:
     - target: {fileID: 114661448183578604, guid: afc203e78d10506429d333a1f7b683ad,
         type: 2}
       propertyPath: ReadyPeriodTime
-      value: 12
+      value: 18.33
       objectReference: {fileID: 0}
     - target: {fileID: 114409676104179554, guid: afc203e78d10506429d333a1f7b683ad,
         type: 2}
       propertyPath: ReadyPeriodTime
-      value: 8
+      value: 11.67
       objectReference: {fileID: 0}
     - target: {fileID: 114708330418178082, guid: afc203e78d10506429d333a1f7b683ad,
         type: 2}
       propertyPath: ReadyPeriodTime
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114661448183578604, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: TimeBetweenSpawns
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114409676104179554, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: TimeBetweenSpawns
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114708330418178082, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: TimeBetweenSpawns
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711096308202732, guid: afc203e78d10506429d333a1f7b683ad, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002101589635068, guid: afc203e78d10506429d333a1f7b683ad, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688734401370326, guid: afc203e78d10506429d333a1f7b683ad, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114017476665348502, guid: afc203e78d10506429d333a1f7b683ad, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: afc203e78d10506429d333a1f7b683ad, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1756087496 stripped
@@ -1385,6 +1418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveFrequency: 30
   WaveDuration: 4
+  SpawnRateIncreaseFrequency: 30
   Spawners:
   - {fileID: 1756087498}
   - {fileID: 1756087497}

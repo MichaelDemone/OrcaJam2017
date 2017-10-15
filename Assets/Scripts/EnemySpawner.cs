@@ -84,8 +84,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void IncreaseSpawnRate()
     {
-        SpawnRateMultiplier += 0.1f;
-        if(SpawnRateMultiplier > 2.5f)
+        SpawnRateMultiplier += 0.25f;
+        if(SpawnRateMultiplier > 5.0f)
         {
             SpawnRateMultiplier = 5.0f;
         }

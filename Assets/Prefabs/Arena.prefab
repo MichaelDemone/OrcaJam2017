@@ -3593,7 +3593,7 @@ MonoBehaviour:
   WaveFrequency: 30
   WaveDuration: 4
   SpawnRateIncreaseFrequency: 30
-  BossSpawnPoints: 1
+  BossSpawnPoints: 100
   Spawners:
   - {fileID: 1386615328146088}
   - {fileID: 1617290860318448}

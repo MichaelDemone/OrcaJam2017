@@ -21,7 +21,7 @@ public class SpawnerWaveScript : MonoBehaviour {
     public GameObject WarningText;
     bool WaveWarningSent = false;
     bool BossWarningSent = false;
-    float BossWarningDuration = 10f;
+    float BossWarningDuration = 5f;
     float BossWarningTimer = 0f;
 
     // Use this for initialization

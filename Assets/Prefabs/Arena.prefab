@@ -1503,8 +1503,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183636526313160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.15, y: 4.32, z: 0}
-  m_LocalScale: {x: 4.6216936, y: 0.49158973, z: 1}
+  m_LocalPosition: {x: -2.15, y: 4.272, z: 0}
+  m_LocalScale: {x: 4.6216936, y: 0.5688131, z: 1}
   m_Children: []
   m_Father: {fileID: 4728446775433812}
   m_RootOrder: 5
@@ -1765,8 +1765,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1543257186404110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.636, y: 11.59, z: 0}
-  m_LocalScale: {x: 3.487628, y: 0.45422, z: 1}
+  m_LocalPosition: {x: -11.636, y: 11.45, z: 0}
+  m_LocalScale: {x: 3.487628, y: 0.6783622, z: 1}
   m_Children: []
   m_Father: {fileID: 4728446775433812}
   m_RootOrder: 8
@@ -1859,8 +1859,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808629365705048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.823, y: 11.08, z: 0}
-  m_LocalScale: {x: 3.8796487, y: 0.5149566, z: 1}
+  m_LocalPosition: {x: -1.823, y: 10.983, z: 0}
+  m_LocalScale: {x: 3.8796487, y: 0.6694053, z: 1}
   m_Children: []
   m_Father: {fileID: 4728446775433812}
   m_RootOrder: 7
@@ -2221,8 +2221,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253568975493980}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.21, y: 10.832, z: 0}
-  m_LocalScale: {x: 2.6060045, y: 0.32355532, z: 1}
+  m_LocalPosition: {x: -19.21, y: 10.712, z: 0}
+  m_LocalScale: {x: 2.6060045, y: 0.5156774, z: 1}
   m_Children: []
   m_Father: {fileID: 4728446775433812}
   m_RootOrder: 9
@@ -2344,8 +2344,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1379048914861580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.535, y: 4.56, z: 0}
-  m_LocalScale: {x: 2.8673296, y: 0.32356, z: 1}
+  m_LocalPosition: {x: -20.535, y: 4.398, z: 0}
+  m_LocalScale: {x: 2.8673296, y: 0.58283716, z: 1}
   m_Children: []
   m_Father: {fileID: 4728446775433812}
   m_RootOrder: 10
@@ -3190,10 +3190,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
   BossEnemy: {fileID: 1669865691307350, guid: 37e6b96e901d30a438eafb707d5b3566, type: 2}
-  TimeBetweenSpawns: 5
+  TimeBetweenSpawns: 6
   SpawnRateMultiplier: 1
   BossSpawnReady: 0
-  ReadyPeriodTime: 8
+  ReadyPeriodTime: 10
   RapidSpawnWave: 0
 --- !u!114 &114425179497470136
 MonoBehaviour:
@@ -3208,10 +3208,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1957139562231552, guid: 7484759c83a484a40b45f65e5cd158b6, type: 2}
   BossEnemy: {fileID: 0}
-  TimeBetweenSpawns: 50
+  TimeBetweenSpawns: 30
   SpawnRateMultiplier: 1
   BossSpawnReady: 0
-  ReadyPeriodTime: 25
+  ReadyPeriodTime: 0
   RapidSpawnWave: 0
 --- !u!114 &114425892174460330
 MonoBehaviour:
@@ -3496,7 +3496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
   BossEnemy: {fileID: 1669865691307350, guid: 37e6b96e901d30a438eafb707d5b3566, type: 2}
-  TimeBetweenSpawns: 5
+  TimeBetweenSpawns: 6
   SpawnRateMultiplier: 1
   BossSpawnReady: 0
   ReadyPeriodTime: 12
@@ -3530,10 +3530,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1695039918294758, guid: f283fbc72aa6e994fb2309078480c7db, type: 2}
   BossEnemy: {fileID: 1669865691307350, guid: 37e6b96e901d30a438eafb707d5b3566, type: 2}
-  TimeBetweenSpawns: 5
+  TimeBetweenSpawns: 6
   SpawnRateMultiplier: 1
   BossSpawnReady: 0
-  ReadyPeriodTime: 4
+  ReadyPeriodTime: 8
   RapidSpawnWave: 0
 --- !u!114 &114730369518933588
 MonoBehaviour:
@@ -3593,7 +3593,7 @@ MonoBehaviour:
   WaveFrequency: 30
   WaveDuration: 4
   SpawnRateIncreaseFrequency: 30
-  BossSpawnPoints: 100
+  BossSpawnPoints: 50
   Spawners:
   - {fileID: 1386615328146088}
   - {fileID: 1617290860318448}
@@ -3766,10 +3766,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1957139562231552, guid: 7484759c83a484a40b45f65e5cd158b6, type: 2}
   BossEnemy: {fileID: 0}
-  TimeBetweenSpawns: 45
+  TimeBetweenSpawns: 20
   SpawnRateMultiplier: 1
   BossSpawnReady: 0
-  ReadyPeriodTime: 30
+  ReadyPeriodTime: 60
   RapidSpawnWave: 0
 --- !u!212 &212006176010770922
 SpriteRenderer:

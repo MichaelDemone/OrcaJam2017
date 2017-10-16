@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6863de1d032183e4fa1aa03755bf95e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxNumberOfTowers: 10
+  MaxNumberOfTowers: 0
   NumberOfTowersPlaced: 0
   Tower: {fileID: 1810632188674620, guid: 5384b09f48f92ec42a1903bbb9ce8b90, type: 2}
   TowerPlacementLocation: {fileID: 4324502936591126}
@@ -346,12 +346,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1304942780868714}
-  FireRate: 0.25
+  FireRate: 0.4
   BulletSpeed: 60
   Bullet: {fileID: 1716955228109920, guid: 023b2a4e6c9a9234ba052327e01faf6d, type: 2}
   flip: 0
   FiringSound: {fileID: 8300000, guid: f3cb3bbf503c21540ac03bc454c78db7, type: 3}
-  FireRateBuffPerParrot: 0.025
+  FireRateBuffPerParrot: 0.01
 --- !u!198 &198169961634738434
 ParticleSystem:
   m_ObjectHideFlags: 1

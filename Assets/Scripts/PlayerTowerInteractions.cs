@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerTowerInteractions : MonoBehaviour
 {
 
-	public int MaxNumberOfTowers = 10;
+	public int MaxNumberOfTowers = 0;
 	public int NumberOfTowersPlaced = 0;
 	
 	public GameObject Tower;

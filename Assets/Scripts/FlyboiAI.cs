@@ -10,7 +10,7 @@ public class FlyboiAI : Enemy {
     
     public int amplitudeMod=1;
     public int wavelengthMod = 1;
-    public int enemyDamage = 1;
+    public int enemyDamage = 0;
 
 
     void Awake() {

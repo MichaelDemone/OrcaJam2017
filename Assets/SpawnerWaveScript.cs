@@ -10,6 +10,8 @@ public class SpawnerWaveScript : MonoBehaviour {
     public float WaveDuration;
     float WaveTimer;
 
+    public float WaveRateMultiplier = 1.0f;
+
     public float SpawnRateIncreaseFrequency;
     float RateIncreaseTimer;
 
@@ -27,7 +29,7 @@ public class SpawnerWaveScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         NextWave = Random.Range(0, 3);
-        WaveTimer = WaveFrequency;
+        WaveTimer = WaveFrequency / WaveRateMultiplier;
         RateIncreaseTimer = SpawnRateIncreaseFrequency;
 
     }
@@ -78,6 +80,7 @@ public class SpawnerWaveScript : MonoBehaviour {
             {
                 Spawners[i].GetComponent<EnemySpawner>().IncreaseSpawnRate();
             }
+            WaveRateMultiplier += 0.2f;
         }
 
     }

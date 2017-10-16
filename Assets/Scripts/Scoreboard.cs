@@ -13,6 +13,6 @@ public class Scoreboard : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print(score);
+        //print(score);
 	}
 }

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4717218373055630}
   - component: {fileID: 114818266363751396}
+  - component: {fileID: 114991094405214326}
   m_Layer: 0
   m_Name: Scoreboard
   m_TagString: Untagged
@@ -51,3 +52,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b470c2f6aef50e408c8c828db8eae3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114991094405214326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1577972642047440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d2c9ccecd0c5947bfe72a25faae45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  announcerStart: {fileID: 8300000, guid: 507377086680a4447a4e57a2436f1197, type: 3}
+  enemy1: {fileID: 8300000, guid: a08c9fd86a9adae488e6459c8df6e5ed, type: 3}
+  enemy2: {fileID: 8300000, guid: 8704ae0b256959f44884a041e1a56794, type: 3}
+  enemy3: {fileID: 8300000, guid: 33295b7d0b6617245ae297b35976ebb3, type: 3}
+  tower1: {fileID: 8300000, guid: 2cadfff920d93a74dbabcec91cb325a1, type: 3}
+  tower2: {fileID: 8300000, guid: f4b75562b028ec9408d0b9b85fd565d6, type: 3}
+  tower3: {fileID: 8300000, guid: f3cb3bbf503c21540ac03bc454c78db7, type: 3}

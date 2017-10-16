@@ -19,7 +19,10 @@ public class SpawnerWaveScript : MonoBehaviour {
     public GameObject[] Spawners;
 
     public GameObject WarningText;
-    bool WarningSent = false;
+    bool WaveWarningSent = false;
+    bool BossWarningSent = false;
+    float BossWarningDuration = 5f;
+    float BossWarningTimer = 0f;
 
     // Use this for initialization
     void Start () {
@@ -31,8 +34,15 @@ public class SpawnerWaveScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        BossWarningTimer -= Time.deltaTime;
+        if(BossWarningTimer <= 0)
+        {
+            WarningText.GetComponent<Text>().text = "";
+            BossWarningSent = false;
+        }
+
         WaveTimer -= Time.deltaTime;
-        if(WaveTimer <= 10f && WarningText != WarningSent)
+        if(WaveTimer <= 10f && !WaveWarningSent)
         {
             if (NextWave == 0)
             {
@@ -44,20 +54,24 @@ public class SpawnerWaveScript : MonoBehaviour {
             {
                 WarningText.GetComponent<Text>().text = "Warning! A wave of enemies is approaching the bottom spawner!";
             }
-            WarningSent = true;
+            WaveWarningSent = true;
+            BossWarningSent = false;
         }
         if(WaveTimer <= 0)
         {
             Spawners[NextWave].GetComponent<EnemySpawner>().StartSpawnWave(WaveDuration);
             NextWave = (NextWave + Random.Range(1, 3)) % 3;
             WaveTimer = WaveFrequency;
-            WarningSent = false;
-            WarningText.GetComponent<Text>().text = "";
+            if (WaveWarningSent)
+            {
+                WaveWarningSent = false;
+                WarningText.GetComponent<Text>().text = "";
+            }
         }
 
         RateIncreaseTimer -= Time.deltaTime;
 
-        if(RateIncreaseTimer < 0)
+        if (RateIncreaseTimer < 0)
         {
             RateIncreaseTimer = SpawnRateIncreaseFrequency;
             for(int i = 0; i < Spawners.Length; i++)
@@ -73,6 +87,11 @@ public class SpawnerWaveScript : MonoBehaviour {
         BossCounter += val;
         if(BossCounter >= BossSpawnPoints)
         {
+            WarningText.GetComponent<Text>().text = "Warning! An enemy captain is approaching!";
+            BossWarningSent = true;
+            WaveWarningSent = false;
+            BossWarningTimer = BossWarningDuration;
+
             BossCounter -= BossSpawnPoints;
             Spawners[2].GetComponent<EnemySpawner>().BossSpawnReady = true;
         }

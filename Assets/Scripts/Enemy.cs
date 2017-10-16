@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour {
 		body = GetComponent<Rigidbody2D>();
         UIText = GameObject.Find("UIText");
         UIText.GetComponent<UpdateUI>().NumEnemies += 1;
+		playerFiring = GameObject.Find("Player").GetComponentInChildren<CannonFireScript>();
 	}
 
 	public virtual void TalkShitGetHit(int damage)
@@ -27,10 +28,17 @@ public class Enemy : MonoBehaviour {
 			Die();
 	}
 
+	private CannonFireScript playerFiring;
+	
 	public virtual void Die()
     {
         Scoreboard.score = Scoreboard.score + 1;
         UIText.GetComponent<UpdateUI>().NumEnemies -= 1;
 		Destroy(this.gameObject);
+	    
+	    if(this.GetType() == typeof(FlyboiAI))
+	    {
+		    playerFiring.BirdKilled();
+	    }
 	}
 }

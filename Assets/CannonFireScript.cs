@@ -81,6 +81,6 @@ public class CannonFireScript : MonoBehaviour {
 
     public void BirdKilled()
     {
-        FireRate += FireRateBuffPerParrot;
+        FireRate -= FireRateBuffPerParrot;
     }
 }

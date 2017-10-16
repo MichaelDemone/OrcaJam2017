@@ -29,8 +29,13 @@ public class Scoreboard : MonoBehaviour {
 	}
 
 	void SetNumTowers()
-	{
-		pti.MaxNumberOfTowers = Mathf.FloorToInt((_score - 10f) / 50f) + 1;
+    {
+        if (pti.MaxNumberOfTowers < 5) 
+            {
+                pti.MaxNumberOfTowers = Mathf.FloorToInt((_score - 10f) / 30f) + 1;
+            } 
+            else{ pti.MaxNumberOfTowers = 5; }
+		
 	}
 	
 	// Update is called once per frame

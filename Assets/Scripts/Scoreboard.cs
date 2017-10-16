@@ -24,7 +24,7 @@ public class Scoreboard : MonoBehaviour {
 	void Start () 
 	{
 		Instance = this;
-		_score = 10;
+		_score = 0;
 		SetNumTowers();
 	}
 

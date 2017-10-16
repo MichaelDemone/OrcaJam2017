@@ -65,7 +65,7 @@ public class Bullet : MonoBehaviour
 
 			anim.SetTrigger("Explode");
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-			Destroy(gameObject, 1f);
+			Destroy(gameObject, 0.1f);
 			Destroy(this);
 		}
 		else

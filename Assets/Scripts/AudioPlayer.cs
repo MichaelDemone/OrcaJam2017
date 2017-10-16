@@ -15,7 +15,7 @@ public class AudioPlayer : MonoBehaviour
 	}
 	
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 		instance = this;
 		audioSource = GetComponent<AudioSource>();

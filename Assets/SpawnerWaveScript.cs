@@ -94,6 +94,12 @@ public class SpawnerWaveScript : MonoBehaviour {
 
             BossCounter -= BossSpawnPoints;
             Spawners[2].GetComponent<EnemySpawner>().BossSpawnReady = true;
+            if(BossSpawnPoints >= 5)
+            {
+                BossSpawnPoints -= 5;
+            }
+            else { BossSpawnPoints = 5; }
+            
         }
     }
 }

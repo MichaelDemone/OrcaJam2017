@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95dc593d2c8af8746ada0df104408435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHP: 10
+  enemyMaxHP: 1
   enemyCurrentHP: 0
   UIText: {fileID: 0}
   flyboiSpeed: 3

@@ -43,7 +43,7 @@ public class EnemyAI : Enemy
                 }
             }
             
-            if (CheckFall()) 
+            if (CheckFall() && !Physics2D.OverlapAreaAll(GroundCheckLeft.position, GroundCheckRight.position).Any(col => col.gameObject.layer == 8)) 
             {
                 Fall();
             }

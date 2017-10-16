@@ -45,23 +45,23 @@ public class SoundPlayer : MonoBehaviour {
     }
 
     IEnumerator Wait() {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         PlaySound();
     }
 
     void PlaySound() {
-        if(randomNumber() <= 1) {
-            if(GameObject.Find("Enemy") != null && GameObject.Find("Tower") != null) {
+       // if(randomNumber() <= 1) {
+            if(GameObject.Find("Enemy(Clone)") != null && GameObject.Find("Tower(Clone)") != null) {
                 AudioClip sound = listAll[Random.Range(0, listAll.Count)];
                 Sound(sound);
-            } else if(GameObject.Find("Enemy") != null) {
+            } else if(GameObject.Find("Enemy(Clone)") != null) {
                 AudioClip sound = listEnemy[Random.Range(0, listAll.Count)];
                 Sound(sound);
-            } else if (GameObject.Find("Tower") != null) {
+            } else if (GameObject.Find("Tower(Clone)") != null) {
                 AudioClip sound = listTower[Random.Range(0, listAll.Count)];
                 Sound(sound);
             }
-        }
+        //}
     }
 
     void Sound(AudioClip sound) {

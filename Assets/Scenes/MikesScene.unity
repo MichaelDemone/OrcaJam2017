@@ -634,12 +634,12 @@ Prefab:
     - target: {fileID: 224943991242097990, guid: 0eac8e93ef3049e4997456a7b830b440,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 413.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224943991242097990, guid: 0eac8e93ef3049e4997456a7b830b440,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 232.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224943991242097990, guid: 0eac8e93ef3049e4997456a7b830b440,
         type: 2}
@@ -721,6 +721,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114036139486773634, guid: 0eac8e93ef3049e4997456a7b830b440,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 555350589}
+    - target: {fileID: 114733916685177286, guid: 0eac8e93ef3049e4997456a7b830b440,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 555350589}
+    - target: {fileID: 114568604347881534, guid: 0eac8e93ef3049e4997456a7b830b440,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 555350589}
+    - target: {fileID: 114091922977625002, guid: 0eac8e93ef3049e4997456a7b830b440,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 555350589}
     - target: {fileID: 114846022648405040, guid: 0eac8e93ef3049e4997456a7b830b440,
         type: 2}
       propertyPath: mateys
@@ -736,26 +756,6 @@ Prefab:
       propertyPath: Scoreboard
       value: 
       objectReference: {fileID: 1621158354}
-    - target: {fileID: 114091922977625002, guid: 0eac8e93ef3049e4997456a7b830b440,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 555350589}
-    - target: {fileID: 114568604347881534, guid: 0eac8e93ef3049e4997456a7b830b440,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 555350589}
-    - target: {fileID: 114036139486773634, guid: 0eac8e93ef3049e4997456a7b830b440,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 555350589}
-    - target: {fileID: 114733916685177286, guid: 0eac8e93ef3049e4997456a7b830b440,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 555350589}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0eac8e93ef3049e4997456a7b830b440, type: 2}
   m_IsPrefabParent: 0

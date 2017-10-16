@@ -2989,7 +2989,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 72ca60167e7362e418961ee75301cc96, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3373,7 +3373,7 @@ MonoBehaviour:
   TimeBetweenSpawns: 30
   SpawnRateMultiplier: 1
   BossSpawnReady: 0
-  ReadyPeriodTime: 0
+  ReadyPeriodTime: 13
   RapidSpawnWave: 0
 --- !u!114 &114425892174460330
 MonoBehaviour:

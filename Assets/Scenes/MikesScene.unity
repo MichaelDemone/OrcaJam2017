@@ -613,6 +613,29 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[29].y
       value: 4.809749
       objectReference: {fileID: 0}
+    - target: {fileID: 114708330418178082, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: BossEnemy
+      value: 
+      objectReference: {fileID: 1669865691307350, guid: 37e6b96e901d30a438eafb707d5b3566,
+        type: 2}
+    - target: {fileID: 114409676104179554, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: BossEnemy
+      value: 
+      objectReference: {fileID: 1669865691307350, guid: 37e6b96e901d30a438eafb707d5b3566,
+        type: 2}
+    - target: {fileID: 114661448183578604, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: BossEnemy
+      value: 
+      objectReference: {fileID: 1669865691307350, guid: 37e6b96e901d30a438eafb707d5b3566,
+        type: 2}
+    - target: {fileID: 114789484949819320, guid: afc203e78d10506429d333a1f7b683ad,
+        type: 2}
+      propertyPath: BossSpawnPoints
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afc203e78d10506429d333a1f7b683ad, type: 2}
   m_IsPrefabParent: 0

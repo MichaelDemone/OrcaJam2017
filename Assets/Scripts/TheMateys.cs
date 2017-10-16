@@ -37,11 +37,12 @@ public class TheMateys : MonoBehaviour {
     }
 
     public AudioClip MateyHurtClip;
-    
-    private void ArrMateysBeenHurtRealBad(int damage) {
 
+    private void ArrMateysBeenHurtRealBad(int damage) {
+        if (damage > 0) { 
         if (!GetComponent<AudioSource>().isPlaying)
             GetComponent<AudioSource>().Play();
+    }
         
         if (mateysCurrentHP > damage) {
             mateysCurrentHP = mateysCurrentHP - damage;

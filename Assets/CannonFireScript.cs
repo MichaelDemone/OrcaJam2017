@@ -79,8 +79,11 @@ public class CannonFireScript : MonoBehaviour {
 	    }
     }
 
+    public InfoText InfoText;
+
     public void BirdKilled()
     {
         FireRate -= FireRateBuffPerParrot;
+        InfoText.SetText("Bird kill: Fire rate increased!");
     }
 }

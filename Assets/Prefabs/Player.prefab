@@ -352,6 +352,7 @@ MonoBehaviour:
   flip: 0
   FiringSound: {fileID: 8300000, guid: f3cb3bbf503c21540ac03bc454c78db7, type: 3}
   FireRateBuffPerParrot: 0.01
+  InfoText: {fileID: 0}
 --- !u!198 &198169961634738434
 ParticleSystem:
   m_ObjectHideFlags: 1

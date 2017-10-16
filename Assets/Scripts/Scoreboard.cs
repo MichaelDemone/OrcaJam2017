@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Scoreboard : MonoBehaviour {
 
@@ -19,6 +20,8 @@ public class Scoreboard : MonoBehaviour {
 	public PlayerTowerInteractions pti;
 
 	private static Scoreboard Instance;
+
+	public InfoText InfoText;
 	
 	// Use this for initialization
 	void Start () 
@@ -30,11 +33,19 @@ public class Scoreboard : MonoBehaviour {
 
 	void SetNumTowers()
     {
-        if (pti.MaxNumberOfTowers < 5) 
-            {
-                pti.MaxNumberOfTowers = Mathf.FloorToInt((_score - 10f) / 30f) + 1;
-            } 
-            else{ pti.MaxNumberOfTowers = 5; }
+	    if (pti.MaxNumberOfTowers < 5)
+	    {
+		    int towersBefore = pti.MaxNumberOfTowers;
+		    pti.MaxNumberOfTowers = Mathf.FloorToInt((_score - 10f) / 30f) + 1;
+		    if (towersBefore != pti.MaxNumberOfTowers)
+		    {
+			    InfoText.SetText("You gained a new tower! Don't forget to place it.");
+		    }
+	    }
+	    else
+	    {
+		    pti.MaxNumberOfTowers = 5;
+	    }
 		
 	}
 	

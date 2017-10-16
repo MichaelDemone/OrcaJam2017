@@ -15,6 +15,7 @@ public class UpdateUI : MonoBehaviour
     public Image TowerCurrent;
     public Image Enemy1;
     public Image Enemy2;
+    public Image Enemy3;
     
     public GameObject mateys;
     public int NumEnemies = 0;
@@ -38,17 +39,32 @@ public class UpdateUI : MonoBehaviour
         SetNumbers(mateysHP, Matey1, Matey2);
         TowerMax.sprite = Numbers[Mathf.Clamp(maxTowers, 0, 9)];
         TowerCurrent.sprite = Numbers[Mathf.Clamp(numTowers, 0, 9)];
-        SetNumbers(Scoreboard.score, Enemy1, Enemy2);
+        SetNumbers(Scoreboard.score, Enemy1, Enemy2, Enemy3);
     }
 
-    void SetNumbers(int number, Image firstDigitSprite, Image secondDigitSprite)
+    void SetNumbers(int number, Image firstDigitSprite, Image secondDigitSprite, Image thirdDigitSprite = null)
     {
-        number = Mathf.Clamp(number, 0, 99);
-        
-        int firstDigit = Mathf.FloorToInt(number / 10f);
-        int secondDigit = number % 10;
+        if (thirdDigitSprite == null)
+        {
+            number = Mathf.Clamp(number, 0, 99);
 
-        firstDigitSprite.sprite = Numbers[firstDigit];
-        secondDigitSprite.sprite = Numbers[secondDigit];
+            int firstDigit = Mathf.FloorToInt(number / 10f);
+            int secondDigit = number % 10;
+
+            firstDigitSprite.sprite = Numbers[firstDigit];
+            secondDigitSprite.sprite = Numbers[secondDigit];
+        }
+        else
+        {
+            number = Mathf.Clamp(number, 0, 999);
+
+            int firstDigit = Mathf.FloorToInt(number / 100f);
+            int secondDigit = Mathf.FloorToInt(number / 10f) % 10;
+            int thirdDigit = number % 10;
+
+            firstDigitSprite.sprite = Numbers[firstDigit];
+            secondDigitSprite.sprite = Numbers[secondDigit];
+            thirdDigitSprite.sprite = Numbers[thirdDigit];
+        }
     }
 }

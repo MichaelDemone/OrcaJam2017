@@ -731,16 +731,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 555350589}
-    - target: {fileID: 114568604347881534, guid: 0eac8e93ef3049e4997456a7b830b440,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 555350589}
-    - target: {fileID: 114091922977625002, guid: 0eac8e93ef3049e4997456a7b830b440,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 555350589}
     - target: {fileID: 114846022648405040, guid: 0eac8e93ef3049e4997456a7b830b440,
         type: 2}
       propertyPath: mateys
@@ -756,6 +746,16 @@ Prefab:
       propertyPath: Scoreboard
       value: 
       objectReference: {fileID: 1621158354}
+    - target: {fileID: 114091922977625002, guid: 0eac8e93ef3049e4997456a7b830b440,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 555350589}
+    - target: {fileID: 114568604347881534, guid: 0eac8e93ef3049e4997456a7b830b440,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 555350589}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0eac8e93ef3049e4997456a7b830b440, type: 2}
   m_IsPrefabParent: 0

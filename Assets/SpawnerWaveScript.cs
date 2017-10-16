@@ -35,14 +35,14 @@ public class SpawnerWaveScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         BossWarningTimer -= Time.deltaTime;
-        if(BossWarningTimer <= 0)
+        if(BossWarningTimer <= 0 && BossWarningSent)
         {
             WarningText.GetComponent<Text>().text = "";
             BossWarningSent = false;
         }
 
         WaveTimer -= Time.deltaTime;
-        if(WaveTimer <= 10f && !WaveWarningSent)
+        if(WaveTimer <= 10f)// && !WaveWarningSent)
         {
             if (NextWave == 0)
             {

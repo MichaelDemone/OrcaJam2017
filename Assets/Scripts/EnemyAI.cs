@@ -19,8 +19,6 @@ public class EnemyAI : Enemy
     public Transform jumpPos, fallPos1, fallPos2, hillPos, slopePos;
     RaycastHit2D[] jumpRay, fallRay1, fallRay2, hillRay, slopeRay;
 
-
-
     public int enemyDamage = 1;
 
     // Update is called once per frame

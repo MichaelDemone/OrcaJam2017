@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour {
 	protected Rigidbody2D body;
 
     public GameObject UIText;
+
+    private GameObject SpawnerController;
 	
 	// Use this for initialization
 	void Start () {
@@ -18,6 +20,7 @@ public class Enemy : MonoBehaviour {
         UIText = GameObject.Find("UIText");
         UIText.GetComponent<UpdateUI>().NumEnemies += 1;
 		playerFiring = GameObject.Find("Player").GetComponentInChildren<CannonFireScript>();
+        SpawnerController = GameObject.Find("Spawners");
 	}
 
 	public virtual void TalkShitGetHit(int damage)
@@ -33,6 +36,7 @@ public class Enemy : MonoBehaviour {
 	public virtual void Die()
     {
         Scoreboard.score = Scoreboard.score + 1;
+        SpawnerController.GetComponent<SpawnerWaveScript>().IncreaseBossCounter(1);
         UIText.GetComponent<UpdateUI>().NumEnemies -= 1;
 		Destroy(this.gameObject);
 	    

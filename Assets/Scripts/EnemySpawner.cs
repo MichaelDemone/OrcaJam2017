@@ -13,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
 
     public float SpawnRateMultiplier = 1.0f;
 
+    public bool BossSpawnReady = false;
+
     bool ReadyPeriod = true;
     public float ReadyPeriodTime = 1.0f;
     // note: in the game, ready periods are set so that spawns are staggered
@@ -80,7 +82,14 @@ public class EnemySpawner : MonoBehaviour
 	
 	public void SpawnEnemy()
 	{
-		Instantiate(Enemy, transform.position, Quaternion.identity);
+        if (BossSpawnReady)
+        {
+            Instantiate(BossEnemy, transform.position, Quaternion.identity);
+            BossSpawnReady = false;
+        } else
+        {
+            Instantiate(Enemy, transform.position, Quaternion.identity);
+        }
 	}
 
     public void IncreaseSpawnRate()

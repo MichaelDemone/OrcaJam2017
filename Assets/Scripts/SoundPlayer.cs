@@ -14,6 +14,8 @@ public class SoundPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        StartCoroutine(Wait());
+
         Sound(announcerStart);
 
         listAll.Add(enemy1);
@@ -35,7 +37,7 @@ public class SoundPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        StartCoroutine(Wait());
+
 
 	}
 
@@ -45,20 +47,23 @@ public class SoundPlayer : MonoBehaviour {
     }
 
     IEnumerator Wait() {
-        yield return new WaitForSeconds(5);
-        PlaySound();
+        while (true) {
+            yield return new WaitForSeconds(5);
+            PlaySound();
+        }
+        
     }
 
     void PlaySound() {
-        if(randomNumber() <= 1) {
-            if(GameObject.Find("Enemy") != null && GameObject.Find("Tower") != null) {
-                AudioClip sound = listAll[Random.Range(0, listAll.Count)];
+        if(randomNumber() <= 0.5) {
+            if(GameObject.Find("Enemy(Clone)") != null && GameObject.Find("Tower(Clone)") != null) {
+                AudioClip sound = listAll[Random.Range(0, listAll.Count-1)];
                 Sound(sound);
-            } else if(GameObject.Find("Enemy") != null) {
-                AudioClip sound = listEnemy[Random.Range(0, listAll.Count)];
+            } else if(GameObject.Find("Enemy(Clone)") != null) {
+                AudioClip sound = listEnemy[Random.Range(0, listEnemy.Count-1)];
                 Sound(sound);
-            } else if (GameObject.Find("Tower") != null) {
-                AudioClip sound = listTower[Random.Range(0, listAll.Count)];
+            } else if (GameObject.Find("Tower(Clone)") != null) {
+                AudioClip sound = listTower[Random.Range(0, listTower.Count-1)];
                 Sound(sound);
             }
         }

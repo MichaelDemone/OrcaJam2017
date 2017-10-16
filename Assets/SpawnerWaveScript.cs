@@ -13,6 +13,9 @@ public class SpawnerWaveScript : MonoBehaviour {
     public float SpawnRateIncreaseFrequency;
     float RateIncreaseTimer;
 
+    public int BossSpawnPoints;
+    int BossCounter = 0;
+
     public GameObject[] Spawners;
 
     public GameObject WarningText;
@@ -63,5 +66,15 @@ public class SpawnerWaveScript : MonoBehaviour {
             }
         }
 
+    }
+
+    public void IncreaseBossCounter(int val)
+    {
+        BossCounter += val;
+        if(BossCounter >= BossSpawnPoints)
+        {
+            BossCounter -= BossSpawnPoints;
+            Spawners[2].GetComponent<EnemySpawner>().BossSpawnReady = true;
+        }
     }
 }

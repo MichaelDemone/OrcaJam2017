@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b470c2f6aef50e408c8c828db8eae3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pti: {fileID: 0}
 --- !u!114 &114991094405214326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63,10 +64,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d2c9ccecd0c5947bfe72a25faae45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  announcerStart: {fileID: 8300000, guid: 507377086680a4447a4e57a2436f1197, type: 3}
-  enemy1: {fileID: 8300000, guid: a08c9fd86a9adae488e6459c8df6e5ed, type: 3}
-  enemy2: {fileID: 8300000, guid: 8704ae0b256959f44884a041e1a56794, type: 3}
-  enemy3: {fileID: 8300000, guid: 33295b7d0b6617245ae297b35976ebb3, type: 3}
-  tower1: {fileID: 8300000, guid: 2cadfff920d93a74dbabcec91cb325a1, type: 3}
-  tower2: {fileID: 8300000, guid: f4b75562b028ec9408d0b9b85fd565d6, type: 3}
-  tower3: {fileID: 8300000, guid: f3cb3bbf503c21540ac03bc454c78db7, type: 3}
+  announcerStart: {fileID: 8300000, guid: b20eee4eaf0353d4fa834ba74c509377, type: 3}
+  enemy1: {fileID: 8300000, guid: d89fe1b6b5ac3ff46858df56edbf3edd, type: 3}
+  enemy2: {fileID: 8300000, guid: a81a6053cd9d515438884b5ca9762580, type: 3}
+  tower1: {fileID: 8300000, guid: b3142498da61fee418ac04a2aa7364c3, type: 3}
+  tower2: {fileID: 8300000, guid: 3a866ed486006ea4c9ce38c8a2d81940, type: 3}
+  tower3: {fileID: 8300000, guid: 04d73dec34b3c9a4cbab7b03bc3c2434, type: 3}
+  parrot1: {fileID: 8300000, guid: b948c369087a9e44e8f07b05b934eb75, type: 3}
+  parrot2: {fileID: 8300000, guid: 03d19edea94eec14a8438b6a3e636dd5, type: 3}
+  boss1: {fileID: 8300000, guid: 760559628a42f574095ee25fefe80be0, type: 3}
+  boss2: {fileID: 8300000, guid: 90cb75fd0580b2a45b818d4cf6121ee8, type: 3}
+  boss3: {fileID: 8300000, guid: 0b5076522ee84dd46a385f1c0960428c, type: 3}

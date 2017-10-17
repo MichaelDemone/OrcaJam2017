@@ -1,5 +1,5 @@
 using System;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 
 public class Camera2DFollow : MonoBehaviour

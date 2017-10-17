@@ -20,6 +20,11 @@ public class MainMenuButtonScript : MonoBehaviour {
     public void OnButtonPress()
     {
         player.GetComponent<PlayerController>().Unpause();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void IWantToQuit() {
+
+        Application.Quit();
     }
 }

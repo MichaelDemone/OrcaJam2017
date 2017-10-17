@@ -31,22 +31,27 @@ public class Scoreboard : MonoBehaviour {
 		SetNumTowers();
 	}
 
-	void SetNumTowers()
-    {
+    void SetNumTowers() {
         int towersBefore = pti.MaxNumberOfTowers;
-        if (score < 10) { pti.MaxNumberOfTowers = 0; }
-        else if (score < 30) { pti.MaxNumberOfTowers = 1; }
-        else if (score < 60) { pti.MaxNumberOfTowers = 2; }
-        else if (score < 120) { pti.MaxNumberOfTowers = 3; }
-        else if (score > 240) { pti.MaxNumberOfTowers = 4; }
-        else { pti.MaxNumberOfTowers = 5; }
+        if (score < 10) {
+            pti.MaxNumberOfTowers = 1;
+        } else if (score < 30) {
+            pti.MaxNumberOfTowers = 2;
+        } else if (score < 60) {
+            pti.MaxNumberOfTowers = 3;
+        } else if (score < 120) {
+            pti.MaxNumberOfTowers = 4;
+        } else if (score >= 240) {
+            pti.MaxNumberOfTowers = 5;
+        } else {
+            pti.MaxNumberOfTowers = 5;
+        }
 
 
-        if (towersBefore != pti.MaxNumberOfTowers)
-        {
+        if (towersBefore != pti.MaxNumberOfTowers) {
             InfoText.SetText("You gained a new tower! Don't forget to place it.");
         }
-    {
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -14,8 +14,8 @@ public class QuitButtonScript : MonoBehaviour {
 		
 	}
 
-    public void OnPushButton()
-    {
+    public void IWantToQuit() {
+
         Application.Quit();
     }
 }
